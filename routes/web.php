@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
+
+
+// CMS 
+Route::get('/dashboard', 'DashboardController@index');
+
+Route::post('/setlocale', 'DashboardController@locale');
+
+//__('nav.welcome')
