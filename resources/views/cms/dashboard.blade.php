@@ -8,20 +8,18 @@
        
         @include('cms.layouts.nav')
           
-          
-
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
             <h1 class="h2">Dashboard</h1>
               
         <a class="btn btn-outline-secondary" href="{{ route('logout') }}"
-onclick="event.preventDefault();
-document.getElementById('logout-form').submit();">
-Logout <span data-feather="log-out"></span></a>
+        onclick="event.preventDefault();
+        document.getElementById('logout-form').submit();">
+        Logout <span data-feather="log-out"></span></a>
 
-<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-{{ csrf_field() }}
-</form>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        {{ csrf_field() }}
+        </form>
               
           </div>
         

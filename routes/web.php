@@ -20,6 +20,6 @@ Route::get('/', 'HomeController@index')->name('home');
 // CMS 
 Route::get('/dashboard', 'DashboardController@index');
 
-Route::post('/setlocale', 'DashboardController@locale');
+Route::post('/setlocale', 'HomeController@locale');
 
-//__('nav.welcome')
+//__('nav.welcome') for language

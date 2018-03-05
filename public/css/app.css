@@ -6,3 +6,246 @@ html {
   min-height: 100%;
 }
 
+.container {
+  max-width: 1000px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none !important;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: grey;
+}
+
+/* Sections   
+-------------------------------------------------- */
+
+.section {
+  padding: 50px 0;
+}
+
+.cover {
+  min-height: 100vh;
+  background: url("/crimefreecities/public/images/cover.jpg") no-repeat center;
+  background-size: cover;
+  padding: 18% 0 0;
+  text-align: center;
+  position: relative;
+}
+
+.personal {
+  background: #376711;
+  text-align: center;
+  color: white;
+}
+
+.work {
+  background: white;
+  text-align: center;
+}
+
+.publications {
+  background: #376711;
+  text-align: center;
+  color: white;
+}
+
+.cover h1 {
+  margin: auto;
+  font-family: "Roboto", sans-serif;
+  font-size: 28.5pt;
+  line-height: 120%;
+  font-weight: normal;
+  color: white;
+}
+
+.cover h1 span {
+  color: #3ed715;
+}
+
+.cover p {
+  margin: 30px auto 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 15pt;
+  line-height: 120%;
+  font-weight: normal;
+  color: white;
+}
+
+.cover .container .carousel-inner {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.personal .profile {
+  text-align: right;
+}
+
+.personal .profile img {
+  max-height: 250px;
+  border-radius: 20px;
+}
+
+.personal .description {
+  text-align: left;
+}
+
+/* nav  
+-------------------------------------------------- */
+
+.navbar-collapse.collapse.in {
+  display: block !important;
+}
+
+.navbar {
+  -webkit-transition: background-color 400ms;
+  transition: background-color 400ms;
+}
+
+.navbar .container {
+  min-width: 90vw !important;
+}
+
+.navbar-light {
+  color: white;
+  background-color: rgba(85, 85, 85, 0);
+}
+
+.navbar-light.withBackground {
+  background-color: white;
+  color: #376711;
+}
+
+.navbar-brand {
+  color: white !important;
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.withBackground .navbar-brand {
+  color: #376711 !important;
+}
+
+.custom-toggler.navbar-toggler {
+  color: white;
+  border-width: 0px;
+}
+
+.withBackground .custom-toggler.navbar-toggler {
+  color: #376711;
+}
+
+.menubutton {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.withBackground .bar1,
+.withBackground .bar2,
+.withBackground .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #376711;
+  margin: 6px 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+/* Fade out the second bar */
+
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.custom-toggler.navbar-toggler:active,
+.custom-toggler.navbar-toggler:focus,
+.custom-toggler.navbar-toggler:hover {
+  outline: none !important;
+}
+
+.nav-link {
+  font-weight: bold;
+  color: white !important;
+  font-family: "Roboto", sans-serif;
+}
+
+.withBackground .nav-link {
+  color: #376711 !important;
+}
+
+.nav-link.active {
+  color: white !important;
+}
+
+.withBackground .nav-link.active {
+  color: #376711 !important;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  border-bottom: 3px solid #7d3081;
+  padding-bottom: 3px;
+}
+
+.localebutton {
+  max-width: 60px;
+  padding-top: 4px;
+}
+
+/* footer & subfooter  
+-------------------------------------------------- */
+
+.topfooter {
+  background: #404041;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 10pt;
+  padding: 20px 40px;
+  position: relative;
+}
+
+.subfooter {
+  background: #2D2D2E;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 10pt;
+  padding: 20px 40px;
+  position: relative;
+}
+
+.subfooter .up {
+  height: 20px;
+  width: 35px;
+  cursor: pointer;
+}
+
