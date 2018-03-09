@@ -6,6 +6,10 @@ html {
   min-height: 100%;
 }
 
+body {
+  font-family: 'Lato', sans-serif;
+}
+
 .container {
   max-width: 1000px;
 }
@@ -30,11 +34,20 @@ a:active {
 
 .cover {
   min-height: 100vh;
-  background: url("/crimefreecities/public/images/cover.jpg") no-repeat center;
+  background: url("/crimefreecities/public/images/cover5.png") no-repeat center;
   background-size: cover;
-  padding: 18% 0 0;
   text-align: center;
   position: relative;
+}
+
+.coveroverlay {
+  min-height: 100%;
+  min-width: 100%;
+  background-color: rgba(85, 85, 85, 0.6);
+  position: absolute;
+  padding: 18% 0 0;
+  top: 0;
+  left: 0;
 }
 
 .personal {
@@ -54,9 +67,19 @@ a:active {
   color: white;
 }
 
+.practices {
+  background: white;
+  text-align: center;
+}
+
+.statistics {
+  background: #376711;
+  text-align: center;
+  color: white;
+}
+
 .cover h1 {
   margin: auto;
-  font-family: "Roboto", sans-serif;
   font-size: 28.5pt;
   line-height: 120%;
   font-weight: normal;
@@ -69,7 +92,6 @@ a:active {
 
 .cover p {
   margin: 30px auto 0;
-  font-family: "Roboto", sans-serif;
   font-size: 15pt;
   line-height: 120%;
   font-weight: normal;
@@ -81,17 +103,101 @@ a:active {
   margin: 0 auto;
 }
 
-.personal .profile {
-  text-align: right;
-}
-
 .personal .profile img {
   max-height: 250px;
   border-radius: 20px;
 }
 
-.personal .description {
-  text-align: left;
+@media only screen and (min-width: 576px) {
+  .personal .profile {
+    text-align: right;
+  }
+
+  .personal .description {
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .personal .description {
+    padding-top: 25px !important;
+  }
+
+  .personal .description p {
+    text-align: justify;
+  }
+}
+
+.topcover {
+  min-height: 20vh;
+  background: url("/crimefreecities/public/images/cover5.png") no-repeat center;
+  background-size: cover;
+  text-align: center;
+  position: relative;
+}
+
+.topcoveroverlay {
+  min-height: 20vh;
+  min-width: 100%;
+  background-color: rgba(85, 85, 85, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* footer & subfooter  
+-------------------------------------------------- */
+
+.topfooter {
+  background: #696969;
+  color: white;
+  font-size: 10pt;
+  padding: 20px 40px;
+}
+
+.subfooter {
+  background: #555555;
+  color: white;
+  font-size: 10pt;
+  padding: 20px;
+}
+
+.subfooter .up {
+  height: 20px;
+  width: 35px;
+  cursor: pointer;
+}
+
+.contactleft {
+  max-width: 270px;
+}
+
+.contactleft span {
+  color: #7d3081;
+}
+
+.contactitem {
+  line-height: 23pt;
+}
+
+.contactfeather {
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+.contacttext {
+  vertical-align: middle;
+}
+
+.topfooter h3 {
+  padding-bottom: 5px;
+  border-bottom: 3px solid #7d3081;
+}
+
+@media only screen and (min-width: 576px) {
+  .contactright {
+    float: right;
+  }
 }
 
 /* nav  
@@ -196,7 +302,7 @@ a:active {
 .nav-link {
   font-weight: bold;
   color: white !important;
-  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
 }
 
 .withBackground .nav-link {
@@ -220,32 +326,5 @@ a:active {
 .localebutton {
   max-width: 60px;
   padding-top: 4px;
-}
-
-/* footer & subfooter  
--------------------------------------------------- */
-
-.topfooter {
-  background: #404041;
-  color: white;
-  font-family: "Roboto", sans-serif;
-  font-size: 10pt;
-  padding: 20px 40px;
-  position: relative;
-}
-
-.subfooter {
-  background: #2D2D2E;
-  color: white;
-  font-family: "Roboto", sans-serif;
-  font-size: 10pt;
-  padding: 20px 40px;
-  position: relative;
-}
-
-.subfooter .up {
-  height: 20px;
-  width: 35px;
-  cursor: pointer;
 }
 

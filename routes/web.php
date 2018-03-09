@@ -16,10 +16,17 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::post('/setlocale', 'HomeController@locale');
+
+
+Route::get('/work', 'WorkController@index');
+
+Route::get('/publications', 'PublicationsController@index');
+
+Route::get('/practices', 'PracticesController@index');
+
+Route::get('/statistics', 'StatisticsController@index');
 
 // CMS 
 Route::get('/dashboard', 'DashboardController@index');
 
-Route::post('/setlocale', 'HomeController@locale');
-
-//__('nav.welcome') for language

@@ -4,5 +4,6 @@ return [
     'statistics' => 'statistiek',
     'work' => 'werk',
     'publications' => 'publicaties',
-    'contact' => 'contact',    
+    'contact' => 'contact',  
+    'practices' => 'werkwijzen'  
 ];

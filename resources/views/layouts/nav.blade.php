@@ -23,10 +23,10 @@
                <a class="nav-link {{ Request::is('publications') ? 'active' : '' }}" href="{{url('')}}/publications">{{ucfirst(__('nav.publications'))}}</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link {{ Request::is('contact') ? 'active' : '' }}" href="{{url('')}}/Contact">{{ucfirst(__('nav.contact'))}}</a>
+                <a class="nav-link {{ Request::is('practices') ? 'active' : '' }}" href="{{url('')}}/practices">{{ucfirst(__('nav.practices'))}}</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" href="{{url('')}}/dashboard">Dashboard</a>
+              <li class="nav-item">
+               <a class="nav-link {{ Request::is('contact') ? 'active' : '' }}" href="#bottom">{{ucfirst(__('nav.contact'))}}</a>
             </li>
             <li class="nav-item">
               <!-- Locale button -->

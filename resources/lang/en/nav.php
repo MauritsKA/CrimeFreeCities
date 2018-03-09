@@ -5,5 +5,6 @@ return [
     'work' => 'work',
     'publications' => 'publications',
     'contact' => 'contact',    
+    'practices' => 'practices'
 ];
 
