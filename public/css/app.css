@@ -45,37 +45,36 @@ a:active {
   min-width: 100%;
   background-color: rgba(85, 85, 85, 0.6);
   position: absolute;
-  padding: 18% 0 0;
   top: 0;
   left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.personal {
+.projects {
   background: #376711;
   text-align: center;
   color: white;
-}
-
-.work {
-  background: white;
-  text-align: center;
 }
 
 .publications {
-  background: #376711;
-  text-align: center;
-  color: white;
-}
-
-.practices {
   background: white;
   text-align: center;
 }
 
-.statistics {
+.practices {
   background: #376711;
   text-align: center;
   color: white;
+}
+
+.statistics {
+  background: white;
+  text-align: center;
 }
 
 .cover h1 {
@@ -98,13 +97,13 @@ a:active {
   color: white;
 }
 
-.cover .container .carousel-inner {
+.container .carousel-inner {
   width: 80%;
   margin: 0 auto;
 }
 
-.personal .profile img {
-  max-height: 250px;
+.profile img {
+  max-height: 180px;
   border-radius: 20px;
 }
 
@@ -119,17 +118,43 @@ a:active {
 }
 
 @media only screen and (max-width: 576px) {
-  .personal .description {
-    padding-top: 25px !important;
+  .description p {
+    text-align: justify;
   }
 
-  .personal .description p {
-    text-align: justify;
+  .profile {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    text-align: center;
   }
 }
 
+.carouselarrow {
+  color: #7d3081;
+}
+
+.carousel-indicators li {
+  background-color: #7d3081;
+  opacity: 0.5;
+}
+
+.carousel-indicators .active {
+  background-color: #7d3081;
+  opacity: 1;
+}
+
+.publications .carousel-inner {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.img-responsive {
+  max-height: 180px;
+  border-radius: 10px;
+}
+
 .topcover {
-  min-height: 20vh;
+  min-height: 25vh;
   background: url("/crimefreecities/public/images/cover5.png") no-repeat center;
   background-size: cover;
   text-align: center;
@@ -137,12 +162,36 @@ a:active {
 }
 
 .topcoveroverlay {
-  min-height: 20vh;
+  min-height: 25vh;
   min-width: 100%;
   background-color: rgba(85, 85, 85, 0.6);
   position: absolute;
   top: 0;
   left: 0;
+}
+
+/* Swiper  
+-------------------------------------------------- */
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 /* footer & subfooter  
@@ -168,10 +217,6 @@ a:active {
   cursor: pointer;
 }
 
-.contactleft {
-  max-width: 270px;
-}
-
 .contactleft span {
   color: #7d3081;
 }
@@ -189,8 +234,11 @@ a:active {
   vertical-align: middle;
 }
 
+h3 {
+  margin-bottom: 15px;
+}
+
 .topfooter h3 {
-  padding-bottom: 5px;
   border-bottom: 3px solid #7d3081;
 }
 
@@ -228,7 +276,7 @@ a:active {
 
 .navbar-brand {
   color: white !important;
-  font-size: 1.75rem;
+  font-size: 2.1rem;
   font-weight: 500;
   line-height: 1.2;
 }
@@ -325,6 +373,39 @@ a:active {
 
 .localebutton {
   max-width: 60px;
-  padding-top: 4px;
+  margin-top: 5px;
+}
+
+.localebutton select {
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: white;
+}
+
+.localebutton select:focus {
+  background-color: transparent;
+  color: white;
+  border-color: #7d3081;
+  -webkit-box-shadow: 0 0 5px #7d3081;
+          box-shadow: 0 0 5px #7d3081;
+}
+
+.withBackground .localebutton select {
+  color: #376711;
+}
+
+.withBackground .localebutton select:focus {
+  color: #376711;
+}
+
+.localebutton select > option {
+  color: black;
+}
+
+@media only screen and (min-width: 768px) {
+  .localebutton {
+    margin-left: 8px;
+  }
 }
 

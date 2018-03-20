@@ -1,47 +1,40 @@
-@extends('layouts.app')
+@extends('cms.layouts.master')
+
+@section('css')
+<link href="{{ asset('css/login.css') }}" rel="stylesheet">
+@endsection
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
 
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+ <body class="text-center">
+    <form class="form-signin" method="POST" action="{{ route('password.email') }}">
+    {{ csrf_field() }}
 
-                    <form class="form-horizontal" method="POST" action="{{ route('password.email') }}">
-                        {{ csrf_field() }}
+      <img class="mb-4" src="{{url('/images/favicon.png')}}" alt="" width="72" height="72">
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Send Password Reset Link
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+       @if (session('status'))
+        <div class="alert alert-success">
+        {{ session('status') }}
         </div>
-    </div>
-</div>
+        @endif
+        
+      <h1 class="h3 mb-3 font-weight-normal">Reset password</h1>
+
+      <label for="inputEmail" class="sr-only">Email address</label>        
+      <input type="email" id="email" name="email" value="{{ old('email') }}"  class="form-control" placeholder="Email address" required autofocus>
+           
+        <br>
+    @if ($errors->has('email'))
+    <span class="help-block">
+    <strong>{{ $errors->first('email') }}</strong>
+    </span>
+    @endif
+
+
+    <button type="submit" class="btn btn-primary"> Password Reset Link </button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+    </form>
+
 @endsection
+     
+

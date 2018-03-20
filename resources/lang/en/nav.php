@@ -2,7 +2,7 @@
 
 return [
     'statistics' => 'statistics',
-    'work' => 'work',
+    'projects' => 'projects',
     'publications' => 'publications',
     'contact' => 'contact',    
     'practices' => 'practices'

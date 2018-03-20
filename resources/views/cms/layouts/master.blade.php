@@ -15,7 +15,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/cms.css?4') }}" rel="stylesheet">
+    <link href="{{ asset('css/cms.css?')}}{{rand(1,100)}}" rel="stylesheet">
     @yield('css')
         
 </head>

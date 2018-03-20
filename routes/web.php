@@ -18,14 +18,15 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::post('/setlocale', 'HomeController@locale');
 
-
-Route::get('/work', 'WorkController@index');
+Route::get('/projects', 'ProjectsController@index');
 
 Route::get('/publications', 'PublicationsController@index');
 
 Route::get('/practices', 'PracticesController@index');
 
 Route::get('/statistics', 'StatisticsController@index');
+
+Route::get('/about', 'AboutController@index');
 
 // CMS 
 Route::get('/dashboard', 'DashboardController@index');

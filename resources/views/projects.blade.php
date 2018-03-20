@@ -9,7 +9,7 @@
 
 <section class="practices section">
    <div class="container">
-   <h3>Work</h3>
+   <h3>Projects</h3>
     <p>A useful supportive approach to crime prevention should be mentioned here as well: Crime Prevention Through Environmental Design (CPTED).  CPTED means: investing in the quality of the urban environment, improving the possibilities for natural surveillance at the same time. Crime free spaces contribute to crime free cities. Different stakeholders, such as housing associations, project developers and transport companies can work together with the city government in the CPTED approach.
     Seeing their environment improve, the confidence of people in their city government increases. CPTED encourages  people to keep their own neighbourhood safe.  
     </p>

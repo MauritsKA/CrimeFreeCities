@@ -2,7 +2,7 @@
 
 return [
     'statistics' => 'statistiek',
-    'work' => 'werk',
+    'projects' => 'projecten',
     'publications' => 'publicaties',
     'contact' => 'contact',  
     'practices' => 'werkwijzen'  
