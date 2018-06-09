@@ -31,3 +31,7 @@ Route::get('/about', 'AboutController@index');
 // CMS 
 Route::get('/dashboard', 'DashboardController@index');
 
+Route::get('/dashboard/images', 'ImageController@index');
+Route::post('/dashboard/images', 'ImageController@add');
+
+

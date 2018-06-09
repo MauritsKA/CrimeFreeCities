@@ -54,6 +54,36 @@ function cross(x) {
   } 
 }
 
+
+var fullscreen = $("a[title='Toggle Fullscreen (F11)']");
+var sidebyside = $("a[title='Toggle Side by Side (F9)']");
+
+fullscreen.click(function( event ){
+    if(fullscreen.hasClass( "active" )){
+      $('#navdiv').hide();
+      $('#navtoggle').hide();
+      }
+    else {
+      $('#navdiv').show();
+      $('#navtoggle').show();
+    }
+});
+
+sidebyside.click(function( event ){
+    if(sidebyside.hasClass( "active" )){
+      $('#navdiv').hide();
+      $('#navtoggle').hide();
+      }
+    else if(fullscreen.hasClass( "active" )){
+      $('#navdiv').hide();
+      $('#navtoggle').hide();
+    }
+    else {
+      $('#navdiv').show();
+      $('#navtoggle').show();
+    }
+});
+
 </script>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

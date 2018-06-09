@@ -1,37 +1,36 @@
 @extends('cms.layouts.master')
 
-@section('content')
-<body>
-    
-    <div class="container-fluid">
-      <div class="row">
-       
-        @include('cms.layouts.nav')
-          
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h2">Dashboard</h1>
-              
-        <a class="btn btn-outline-secondary logoutnocollapse" href="{{ route('logout') }}"
-        onclick="event.preventDefault();
-        document.getElementById('logout-form').submit();">
-        Logout <span data-feather="log-out"></span></a>
-
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-        {{ csrf_field() }}
-        </form>
-        </div>  
-
-        @include('cms.layouts.navcollapsed')
-            
-        </main>
-      </div>
-    </div>
-
-<script>
-
-$("#locale option[value='{{\App::getLocale()}}']").attr("selected","selected");
-</script>
-         
-    
+@section('title')
+<h1 class="h2">Dashboard</h1>
 @endsection
+
+@section('content')
+@parent
+<form id="upload-form" method="POST" action="{{url('balances/create')}}">
+{{ csrf_field() }}
+
+  <textarea id="TextEditor"></textarea>
+  <!-- <input type="text" class="form-control" id="name" name="name" placeholder="" value="{{ old('name') }}" required> -->
+  <button  type="submit" value="Upload" class="btn btn-primary">Create!</button>
+        
+</form>
+@endsection
+
+@section('scripts')
+<script>
+var simplemde = new SimpleMDE({ 
+    element: document.getElementById("TextEditor"),
+    spellChecker: false,
+    autosave: {
+      enabled: true,
+      uniqueId: "Markdown1",
+      delay: 10000,
+    }
+});
+</script>   
+@endsection
+
+   
+
+
+

@@ -17,6 +17,7 @@ class HomeController extends Controller
     
     public function index()
     {
+        bcrypt('wachtwoord');
         return view('home');
     }
 

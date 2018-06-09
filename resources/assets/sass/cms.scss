@@ -22,9 +22,16 @@ body {
   vertical-align: text-bottom;
 }
 
-/*
- * Sidebar
- */
+.image_thumbnails {
+    border-radius:20%; 
+    height:120px;
+    width:120px;
+    max-height: 20vmin;
+    max-width: 20vmin;
+}
+
+/* Sidebar 
+-------------------------------------------------- */
 
 .sidebar {
   position: fixed;

@@ -6,6 +6,6 @@ return [
     'publications' => 'publicaties',
     'pages' => 'pagina\'s',
     'statistics' => 'statistieken',
-    'pictures' => 'afbeeldingen',
-    
+    'images' => 'afbeeldingen',
+    'dashboard' => 'dashboard',     
 ];

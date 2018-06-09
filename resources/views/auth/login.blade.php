@@ -6,7 +6,10 @@
 
 @section('content')
 
+
  <body class="text-center">
+
+    
     <form class="form-signin" method="POST" action="{{ route('login') }}">
     {{ csrf_field() }}
 
@@ -43,8 +46,6 @@
     <a class="btn btn-link" href="{{ route('password.request') }}"> Forgot Your Password?</a>
 
     </form>
-
-
 @endsection
      
      
