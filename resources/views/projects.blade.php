@@ -7,6 +7,9 @@
   <div class="topcoveroverlay"></div>
 </section>
 
+                   
+            
+
 <section class="practices section">
    <div class="container">
    <h3>Projects</h3>
@@ -18,8 +21,19 @@
 
 <section class="statistics section">
    <div class="container">
-   <h3>&ampmore</h3>
-    <p>Crime is concentrated mainly in cities. In the Netherlands, for example, the chance of becoming a victim of a crime such as burglary or robbery in urbanised areas is 2-5 times higher than in rural areas (see ‘statistics’ for more information). Crime prevention is most urgent in urbanised areas. For this reason, the content of this website is focused  on crime prevention in cities with a population of 75.000 and more. </p>
+  
+      @foreach($projects as $project)
+
+        <h3>{{ $project->texts()->get()->where('type','title')->where('lang',Session::get('locale'))->pluck('content')->first()}}</h3>
+        <div class="row">
+          <div class="profile col-sm-4"><img class="img-fluid" src="{{url('/images')}}/{{$project->image()->get()->pluck('url')->first()}}" ></div>
+          <div class="description col-sm-8">
+          <p>{{   $project->texts()->get()->where('type','summary')->where('lang',Session::get('locale'))->pluck('content')->first()}}</p>
+          </div>
+        </div>
+        
+      @endforeach   
+
   </div>
 </section>
 

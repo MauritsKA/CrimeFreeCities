@@ -14,24 +14,37 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
-
 Route::post('/setlocale', 'HomeController@locale');
 
-Route::get('/projects', 'ProjectsController@index');
+// Pages 
+Route::get('/', 'HomeController@display')->name('home');
 
-Route::get('/publications', 'PublicationsController@index');
+Route::get('/projects', 'ProjectsController@display');
 
-Route::get('/practices', 'PracticesController@index');
+Route::get('/publications', 'PublicationsController@display');
 
-Route::get('/statistics', 'StatisticsController@index');
+Route::get('/practices', 'PracticesController@display');
 
-Route::get('/about', 'AboutController@index');
+Route::get('/statistics', 'StatisticsController@display');
+
+Route::get('/about', 'AboutController@display');
 
 // CMS 
 Route::get('/dashboard', 'DashboardController@index');
+Route::get('/dashboard/texts', 'DashboardController@texts');
 
-Route::get('/dashboard/images', 'ImageController@index');
-Route::post('/dashboard/images', 'ImageController@add');
+
+Route::get('/dashboard/images', 'ImagesController@index');
+Route::post('/dashboard/images', 'ImagesController@add');
+
+Route::get('/dashboard/projects', 'ProjectsController@index');
+Route::post('/dashboard/projects', 'ProjectsController@add');
+Route::post('/dashboard/projects/edit/{project}', 'ProjectsController@edit');
+Route::get('/dashboard/projects/delete/{project}', 'ProjectsController@delete');
+Route::get('/dashboard/projects/{project}', 'ProjectsController@single');
+
+Route::get('/dashboard/publications', 'PublicationsController@index');
+Route::post('/dashboard/publications', 'PublicationsController@add');
+Route::get('/dashboard/publications/{publication}', 'PublicationsController@single');
 
 

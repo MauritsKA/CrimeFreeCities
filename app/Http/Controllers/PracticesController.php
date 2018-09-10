@@ -11,7 +11,7 @@ class PracticesController extends Controller
         $this->middleware('setlocale');
     }
 
-       public function index()
+       public function display()
     {
         return view('practices');
     }

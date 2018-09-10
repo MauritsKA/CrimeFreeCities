@@ -28,8 +28,8 @@
               <li class="nav-item">
                <a class="nav-link {{ Request::is('contact') ? 'active' : '' }}" href="#bottom">{{ucfirst(__('nav.contact'))}}</a>
             </li>
-            <li class="nav-item">
               <!-- Locale button -->
+            <li class="nav-item">
               <div class="localebutton">
                 <form class="form-inline" method="POST" id="localeform" action="{{url('/setlocale')}}">
                 {{ csrf_field() }}    

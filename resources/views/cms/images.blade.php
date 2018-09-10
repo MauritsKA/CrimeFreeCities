@@ -1,7 +1,7 @@
 @extends('cms.layouts.master')
 
 @section('title')
-<h1 class="h2">Images</h1>
+<h1 class="h2">{{ucfirst(__('cmsnav.images'))}}</h1>
 @endsection
 
 @section('content')
@@ -48,23 +48,30 @@
 <table class="table table-hover">
     <thead>
         <tr>
-            <th style="width: 80px;"></th>
+            <th style="min-width:80px; max-width:80px;"></th>
             <th style="text-align:center">Label</th>
             <th style="text-align:center">url</th>
+            <th style="min-width:15px; max-width:15px;"></th>
+            <th style="min-width:15px; max-width:15px;"></th>
         </tr>
     </thead>
                 
     <tbody> 
         @foreach($images as $image)
         <tr>
-            <td style="min-width:80px; max-width:80px;"><a href="{{url('/images')}}/eig.png">
-           <div class='image_thumbnails' style="background: url('{{url('/images')}}/{{$image->url}}.png') no-repeat center center;
+            <td onclick="document.location.href='{{url('/images')}}/{{$image->url}}';return false;" class="btnextra">
+
+           <div class='image_thumbnails' style="background: url('{{url('/images')}}/{{$image->url}}') no-repeat center center;
                 background-size: cover;
                 -webkit-background-size: cover;
                 -moz-background-size: cover; 
-                -o-background-size: cover;"></div></a></td>
+                -o-background-size: cover;"></div></td>
             <td style="vertical-align:middle; text-align:center;">{{$image->label}}</td>
-            <td class="negative" style="vertical-align:middle; text-align:center;">{{url('/images')}}/{{$image->url}}</td>
+            <td style="vertical-align:middle; text-align:center;"><span class="imgurl{{$image->id}}">{{url('/images')}}/{{$image->url}}</span></td>
+
+              <td style="vertical-align:middle"><a onclick="contentEdit('{{$image->id}}','{{$image->label}}')" class="btnextra"><span data-feather="edit-2"></a></td>
+                <td style="vertical-align:middle"><a onclick="contentDelete('{{$image->id}}','{{$image->label}}')" role="button" class="btnextra"><span data-feather="trash-2"></a></td>
+
         </tr>  
         @endforeach                      
     </tbody>
@@ -91,6 +98,23 @@
         
     });
 });
+
+ // Balance
+function contentEdit(imgid,label){
+   
+}    
+
+// Balance
+function contentDelete(mutid, url){
+       
+var check = confirm('Are you sure to delete this item?');
+    if(check){
+        window.location.href = url; 
+   }
+   return false;
+};
+
+
 
 // var simplemde = new SimpleMDE({ 
 //     element: document.getElementById("TextEditor"),

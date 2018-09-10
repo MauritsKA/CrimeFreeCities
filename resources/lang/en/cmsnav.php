@@ -1,11 +1,14 @@
 <?php
 
 return [
-
-    'settings' => 'settings',
+    'dashboard' => 'dashboard',
+    'projects' => 'projects', 
     'publications' => 'publications',
-    'pages' => 'pages',
     'statistics' => 'statistics',
+    'practices' => 'practices',
     'images' => 'images',
-    'dashboard' => 'dashboard',    
+    'settings' => 'settings',
+    'summary' => 'summary',
+    'title' => 'title',
+       
 ];

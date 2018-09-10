@@ -4,6 +4,9 @@
 
 <script>
 var open = false;
+//// Actions
+$("#locale option[value='{{\App::getLocale()}}']").attr("selected","selected");
+
 //// Events
 $(function() {
   setnav();

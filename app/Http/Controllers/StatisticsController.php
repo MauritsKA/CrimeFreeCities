@@ -11,7 +11,7 @@ class StatisticsController extends Controller
         $this->middleware('setlocale');
     }
 
-       public function index()
+       public function display()
     {
         return view('statistics');
     }

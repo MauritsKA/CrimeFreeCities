@@ -7,7 +7,7 @@ use App;
 use Session;
 use App\Image;
 
-class ImageController extends Controller
+class ImagesController extends Controller
 {
     public function __construct()
     {
@@ -17,7 +17,7 @@ class ImageController extends Controller
 
     public function index()
     {
-        $images = Image::orderBy('created_at', 'desc')->get();
+        $images = Image::orderBy('created_at', 'desc')->where('id', '!=', 1)->get();
         return view('cms.images', compact('images'));
     }
 

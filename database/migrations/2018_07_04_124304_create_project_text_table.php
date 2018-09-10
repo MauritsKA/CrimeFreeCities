@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePublicationsTable extends Migration
+class CreateProjectTextTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreatePublicationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('publications', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('image_id')->nullable();
-            $table->timestamps();
+          Schema::create('project_text', function (Blueprint $table) {
+            $table->integer('project_id');
+            $table->integer('text_id');
+            $table->primary(['project_id','text_id']);
         });
     }
 
@@ -27,6 +27,6 @@ class CreatePublicationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('publications');
+           Schema::dropIfExists('project_text');
     }
 }
