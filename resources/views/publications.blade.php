@@ -5,21 +5,33 @@
 
 <section class="topcover">
   <div class="topcoveroverlay"></div>
-</section>
+</section>    
 
-<section class="practices section">
+<section class="publicationintro section">
    <div class="container">
-   <h3>Publications</h3>
-    <p>A useful supportive approach to crime prevention should be mentioned here as well: Crime Prevention Through Environmental Design (CPTED).  CPTED means: investing in the quality of the urban environment, improving the possibilities for natural surveillance at the same time. Crime free spaces contribute to crime free cities. Different stakeholders, such as housing associations, project developers and transport companies can work together with the city government in the CPTED approach.
-    Seeing their environment improve, the confidence of people in their city government increases. CPTED encourages  people to keep their own neighbourhood safe.  
+   <h3>publications</h3>
+    <p>Een intro voor de publication sessies, met uitleg wat er in staat en hoe het verdeeld is, met misschien een kleine algemene uitleg over de soort publicationen die je doet. 
     </p>
   </div>
 </section>
 
-<section class="statistics section">
+<section class="publicationoverview section">
    <div class="container">
-   <h3>&ampmore</h3>
-    <p>Crime is concentrated mainly in cities. In the Netherlands, for example, the chance of becoming a victim of a crime such as burglary or robbery in urbanised areas is 2-5 times higher than in rural areas (see ‘statistics’ for more information). Crime prevention is most urgent in urbanised areas. For this reason, the content of this website is focused  on crime prevention in cities with a population of 75.000 and more. </p>
+  
+      @foreach($publications as $publication)
+      <div class="{{$publication->id % 2 == 0 ? 'even' : 'odd'}}">
+
+        <h3>{{ $publication->texts()->get()->where('type','title')->where('lang',Session::get('locale'))->pluck('content')->first()}}</h3>
+        <div class="row">
+          <div class="profile col-sm-4"><img class="img-fluid" src="{{url('/images')}}/{{$publication->image()->get()->pluck('url')->first()}}" ></div>
+          <div class="description col-sm-8">
+          <p> <?php echo parsedown( $publication->texts()->get()->where('type','summary')->where('lang',Session::get('locale'))->pluck('content')->first() ); ?> </p>
+          </div>
+        </div>
+
+      </div>
+      @endforeach   
+
   </div>
 </section>
 

@@ -23,7 +23,7 @@ class Dashboardcontroller extends Controller
     public function texts()
     {    
      
-        $texts = Text::with('projects')->get()->all();
+        $texts = Text::with('publications','projects')->get()->all();
 
         return response()->json(['success' => true, 'texts' => $texts]);
     }

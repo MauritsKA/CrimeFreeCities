@@ -20,7 +20,6 @@ class ProjectsController extends Controller
     {
     	$projects = Project::orderBy('created_at', 'desc')->get();
 
-
         return view('projects', compact('projects'));
     }
 
@@ -92,7 +91,7 @@ class ProjectsController extends Controller
 	    ]);
 	    $project->texts()->attach($ensummary->id);
 
-	    return back();
+	    return back()->with('status', 'Succes!');
 
     }
 
@@ -146,11 +145,20 @@ class ProjectsController extends Controller
 
  	 public function delete(Project $project)
     {
-    	$texts = $project->texts();
-    	//dd($texts);
-    	$project->delete(); 
-    	$texts->delete();
+    	
+    	$texts = $project->texts()->delete();
+    	
+        $image = $project->image;
 
+      	if($image->label != "default"){
+	        $image->delete();
+	        $base = base_path();
+	        $base_total = $base.'/public/images/'.$project->image->url;
+	        unlink($base_total);
+      	}
+
+    	$project->delete(); 
+    
     	return back()->with('status', 'Succes!');
     }
       

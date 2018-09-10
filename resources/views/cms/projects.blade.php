@@ -110,12 +110,22 @@
 @section('scripts')
 
 <script>
-var simplemde = new SimpleMDE({ 
+var nlsummarymde = new SimpleMDE({ 
     element: document.getElementById("nlsummary"),
     spellChecker: false,
     autosave: {
       enabled: true,
-      uniqueId: "Markdown1",
+      uniqueId: "nlsummary",
+      delay: 10000,
+    }
+});
+
+var ensummarymde = new SimpleMDE({ 
+    element: document.getElementById("ensummary"),
+    spellChecker: false,
+    autosave: {
+      enabled: true,
+      uniqueId: "ensummary",
       delay: 10000,
     }
 });
@@ -141,18 +151,14 @@ $(function() {
  
 });
 
-
 function clearform(){
     $("#upload-form")[0].reset();
     $("#add").text("Add");
     $('#upload-form').prop('action', '{{ url('dashboard/projects')}}');
+    nlsummarymde.value("");
+    ensummarymde.value("");
   return false; 
 };
-
-function contentEdit(id){
-     $('#upload-form').prop('action', '{{ url('dashboard/projects')}}/edit/'+id);
-      $("#add").text("Edit");
-}    
 
 function contentDelete(id){
 var url = '{{url('/')}}/dashboard/projects/delete';
@@ -164,9 +170,9 @@ var check = confirm('Are you sure to delete this item?');
    return false;
 };
 
-
 // Call AJAX and update overviews
 function fillform(id){
+    clearform()
 
 var projectid = 1
 $.get('{{url('/dashboard/texts')}}', function(response){
@@ -175,16 +181,29 @@ if(response.success)
 responsedata = response;
 
  var projectdata = $.grep(responsedata.texts, function (element) {    
-  return element.projects[0].id == id;
+    if(element.projects != undefined){
+        if(element.projects[0] != undefined){
+            return element.projects[0].id == id;
+        }
+    }
 });
 
 for(i=0; i<projectdata.length; i++){
     var lang = projectdata[i].lang
     var type = projectdata[i].type
     $('#'+lang + type).val(projectdata[i].content);
-}
 
-   contentEdit(id)
+    if( projectdata[i].content != null ){
+        if(lang == "nl" && type == "summary"){
+        nlsummarymde.value(projectdata[i].content);
+        }
+
+        if(lang == "en" && type == "summary"){
+        ensummarymde.value(projectdata[i].content);
+        }
+    }
+
+}
  
   }, 'json');
 }

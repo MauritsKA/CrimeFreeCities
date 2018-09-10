@@ -11,4 +11,9 @@ class Publication extends Model
     public function texts(){
        return $this->belongsToMany(Text::class);
     }
+
+    public function image()
+    {
+        return $this->belongsTo(Image::class);
+    }
 }

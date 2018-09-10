@@ -56,12 +56,62 @@ a:hover, a:focus, a:active{
     background: $color1;
     text-align: center;
     color: white;
+}  
+
+.projectintro{
+    background: $color1;
+    text-align: center;
+    color: white;
+}  
+
+.projectoverview{
+    background: white;
+    text-align: center;
 }   
+
+.projectoverview h3{
+  margin-bottom: 15px;
+  margin-top: 15px;
+  border-bottom: 3px solid $color2;  
+}
+
+.projectoverview a{
+  color:black;  
+}
+
+.projectoverview a:hover, .projectoverview a:focus, .projectoverview a:active{
+  color: grey;
+}
 
 .publications{
     background: white;
     text-align: center;
 }   
+
+.publicationintro{
+    background: $color1;
+    text-align: center;
+    color: white;
+}  
+
+.publicationoverview{
+    background: white;
+    text-align: center;
+}   
+
+.publicationoverview h3{
+  margin-bottom: 15px;
+  margin-top: 15px;
+  border-bottom: 3px solid $color2;  
+}
+
+.publicationoverview a{
+  color:black;  
+}
+
+.publicationoverview a:hover, .publicationoverview a:focus, .publicationoverview a:active{
+  color: grey;
+}
 
 .practices{
     background: $color1;

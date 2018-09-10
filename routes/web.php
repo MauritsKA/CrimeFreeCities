@@ -45,6 +45,8 @@ Route::get('/dashboard/projects/{project}', 'ProjectsController@single');
 
 Route::get('/dashboard/publications', 'PublicationsController@index');
 Route::post('/dashboard/publications', 'PublicationsController@add');
+Route::post('/dashboard/publications/edit/{publication}', 'PublicationsController@edit');
+Route::get('/dashboard/publications/delete/{publication}', 'PublicationsController@delete');
 Route::get('/dashboard/publications/{publication}', 'PublicationsController@single');
 
 
