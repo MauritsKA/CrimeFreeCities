@@ -12,11 +12,13 @@ class StatisticsController extends Controller
       public function __construct()
     {
         $this->middleware('setlocale');
+        $this->middleware('auth')->except('display');
     }
 
-       public function display()
+      public function display()
     {
-        return view('statistics');
+        $facts = Statistic::orderBy('created_at', 'desc')->get();
+        return view('statistics', compact('facts'));
     }
 
     public function index()
@@ -27,9 +29,27 @@ class StatisticsController extends Controller
 
   	   public function add()
     {	
-    	if(request('fact') != null){
+      $fact = Statistic::create([ ]);
 
-    	$fact = request('fact');
+      $nlsummary = Text::create([
+              'lang' => 'nl',
+              'type' =>  'summary',
+              'content' => request('nlsummary'),
+      ]);
+      $fact->texts()->attach($nlsummary->id);
+
+      $ensummary = Text::create([
+              'lang' => 'en',
+              'type' =>  'summary',
+              'content' => request('ensummary'),
+      ]);
+      $fact->texts()->attach($ensummary->id);
+
+      return redirect()->back()->withInput()->with('status', "Succesfully added practices"); 
+
+    	 if(request('fact') != null){
+
+    	 $fact = request('fact');
 
         $fact_data = Statistic::create([
             'content' => $fact,

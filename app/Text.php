@@ -15,4 +15,12 @@ class Text extends Model
     public function publications(){
        return $this->belongsToMany(Publication::class);
     }
+
+     public function statistics(){
+       return $this->belongsToMany(Statistic::class);
+    }
+
+     public function practices(){
+       return $this->belongsToMany(Practice::class);
+    }
 }

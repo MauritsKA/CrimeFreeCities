@@ -24,13 +24,20 @@
 {{ csrf_field() }}
 
     <div class="row">
-        <div class="col-lg-6">
-            <div class="form-group">
-                <label for="label">Fact</label>
-                <textarea maxlength="180" class="form-control" id="fact" name="fact" placeholder="" value="{{ old('fact') }}" required> </textarea> 
-            </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label for="nlsummary">Feitje</label>
+            <textarea class="form-control" id="nlsummary"  name="nlsummary"  rows="5" placeholder="" value="{{ old('fact') }}" required></textarea>
         </div>
     </div>
+
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label for="ensummary">Fact)</label>
+            <textarea class="form-control" id="ensummary"  name="ensummary"  rows="5" placeholder="" value="{{ old('fact') }}" required></textarea>
+        </div>
+    </div>
+</div>
 
 <button id="add" type="submit" value="Upload" class="btn btn-secondary">Add</button> &nbsp; <a class="btn btn-secondary" href="" onclick="clearform();return false;" role="button">Clear</a>
 
@@ -87,7 +94,7 @@ function fillform(id){
 
 function clearform(){
     $("#upload-form")[0].reset();
-     $('#fact').html("");
+    $('#fact').html("");
     $("#add").text("Add");
     $('#upload-form').prop('action', '{{ url('dashboard/statistics')}}');
   

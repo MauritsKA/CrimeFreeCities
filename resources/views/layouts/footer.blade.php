@@ -92,8 +92,6 @@ $("html, body").animate({ scrollTop:  $(document).height() - $( window ).height(
   return false;
 });
 
-//// Functions
-
 // Menu scroll up & down color 
 function menuColoring() {
     var scrollPosition = $(window).scrollTop();
@@ -140,20 +138,14 @@ function cross(x) {
   } 
 }
 
+
 // Height management for carousel
 function setheight(){
   var height = Math.max.apply(Math, $(".carousel-item").map(function () {
     return $(this).height(); 
   })); 
 
-  $(".pslide" ).each(function(){
-   var thisH = $(this).height();
-     console.log($(this).height)
-  });
-
-  var margin = height 
   $('.carousel-item').css('min-height',height);
-
 }
 
 function resetheight(){

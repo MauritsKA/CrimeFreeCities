@@ -97,3 +97,4 @@ sidebyside.click(function( event ){
     <script>
       feather.replace()
     </script>
+    

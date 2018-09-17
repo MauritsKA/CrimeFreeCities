@@ -58,3 +58,8 @@ Route::get('/dashboard/statistics', 'StatisticsController@index');
 Route::post('/dashboard/statistics', 'StatisticsController@add');
 Route::post('/dashboard/statistics/edit/{statistic}', 'StatisticsController@edit');
 Route::get('/dashboard/statistics/delete/{statistic}', 'StatisticsController@delete');
+
+Route::get('/dashboard/practices', 'PracticesController@index');
+Route::post('/dashboard/practices', 'PracticesController@add');
+Route::post('/dashboard/practices/edit/{statistic}', 'PracticesController@edit');
+Route::get('/dashboard/practices/delete/{statistic}', 'PracticesController@delete');

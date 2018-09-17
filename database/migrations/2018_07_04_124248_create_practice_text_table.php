@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStatisticsTable extends Migration
+class CreatePracticeTextTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateStatisticsTable extends Migration
      */
     public function up()
     {
-        Schema::create('statistics', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+          Schema::create('practice_text', function (Blueprint $table) {
+            $table->integer('practice_id');
+            $table->integer('text_id');
+            $table->primary(['practice_id','text_id']);
         });
     }
 
@@ -26,6 +27,6 @@ class CreateStatisticsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('statistics');
+        Schema::dropIfExists('practice_text');
     }
 }

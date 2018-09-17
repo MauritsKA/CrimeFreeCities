@@ -16,6 +16,7 @@ class PublicationsController extends Controller
   public function __construct()
   {
     $this->middleware('setlocale');
+    $this->middleware('auth')->except('display');
   }
 
   public function display()

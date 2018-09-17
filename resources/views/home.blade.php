@@ -15,7 +15,7 @@
         <?php $counter = 0; ?>
         @foreach($facts as $fact)
           <div class="carousel-item {{$counter == 0 ? 'active' : ''}}">
-            <p class="d-block w-60 pslide" alt="{{$fact->id}} slide">{{$fact->content}}</p>
+            <div class="pslide"><p class="d-block w-60" alt="{{$fact->id}} slide">{{$fact->content}}</p></div>
           </div>
         <?php $counter++; ?>  
         @endforeach
@@ -137,38 +137,6 @@
 
 
 <script>
-// setheight
-// $(function() {
-//   setheights();
-// });
-
-// $(window).resize(function() {
-//   setheights()
-
-// });
-
-// function setheights(){
-//   var maxHeight = 0;
-
-  // $(".carousel-item" ).each(function(){
-  //  var thisH = $(this).height();
-  //  if (thisH > maxHeight) { maxHeight = thisH; }
-  // });
-
-//   $(".carousel-item" ).height(maxHeight);
-//   console.log(maxHeight)
-
-//   $(".carousel-item" ).each(function() {
-//       var ownHeight = $(this).height();
-//       //var margin = (maxHeight - ownHeight)/2;
-//       console.log(ownHeight);
-//       //console.log(margin);
-//       //$(this).css('height', maxHeight);
-
-//   }); 
-// }
-
-
 var swiper = new Swiper('.swiper-container', {
       slidesPerView: 3,
       spaceBetween: 30,
