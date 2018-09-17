@@ -8,17 +8,18 @@
 
     <h1>{{ucfirst(__('home.title1'))}}<span> {{ucfirst(__('home.title2'))}}</span> {{ucfirst(__('home.title3'))}} <span>{{ucfirst(__('home.title4'))}}</span></h1>
 
+
     <div id="covercarousel" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <p class="d-block w-60" alt="First slide">A mantis shrimp can swing its claw so fast it boils the water around it and creates a flash of light. </p>
-        </div>
-        <div class="carousel-item">
-          <p class="d-block w-60" alt="Second slide">A small percentage of the static you see on "dead" tv stations is left over radiation from the Big Bang. You're seeing residual effects of the Universe's creation.</p>
-        </div>
-        <div class="carousel-item">
-          <p class="d-block w-60"  alt="Third slide">If you were to remove all of the empty space from the atoms that make up every human on earth, the entire world population could fit into an apple.</p>
-        </div>
+
+        <?php $counter = 0; ?>
+        @foreach($facts as $fact)
+          <div class="carousel-item {{$counter == 0 ? 'active' : ''}}">
+            <p class="d-block w-60 pslide" alt="{{$fact->id}} slide">{{$fact->content}}</p>
+          </div>
+        <?php $counter++; ?>  
+        @endforeach
+
       </div>
       <a class="carousel-control-prev" href="#covercarousel" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -50,16 +51,10 @@
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             <!-- Slides -->
-            <div class="swiper-slide"> <a href="" data-toggle="modal" data-target="#exampleModal"><img src="{{url('/images/publications/leefomgeving.png')}}" class="img-responsive"></a></div>
-            <div class="swiper-slide"><a href="" data-toggle="modal" data-target="#exampleModal"><img src="{{url('/images/publications/parkeren.png')}}" class="img-responsive"></a></div>
-            <div class="swiper-slide"><a href="" data-toggle="modal" data-target="#exampleModal"><img src="{{url('/images/publications/socialeveiligheid.png')}}" class="img-responsive"></a></div>
-             <div class="swiper-slide"> <a href="" data-toggle="modal" data-target="#exampleModal"><img src="{{url('/images/publications/tuinsteden.png')}}" class="img-responsive"></a></div>
-            <div class="swiper-slide"><a href="" data-toggle="modal" data-target="#exampleModal"><img src="{{url('/images/publications/veiligontwerp.png')}}" class="img-responsive"></a></div>
-            <div class="swiper-slide"><a href="" data-toggle="modal" data-target="#exampleModal"><img src="{{url('/images/publications/vogelbuurt.png')}}" class="img-responsive"></a></div>
-             <div class="swiper-slide">Slide 7</div>
-            <div class="swiper-slide">Slide 8</div>
-            <div class="swiper-slide">Slide 9</div>
-            ...
+            @foreach($publications as $publication)
+            <div class="swiper-slide"> <a href="" data-toggle="modal" data-target="#testModal{{$publication->id}}"><img src="{{url('/images')}}/{{$publication->image->url}}" class="img-responsive"></a></div>
+            @endforeach
+        
         </div>
         <!-- If we need pagination -->
         <div class="swiper-pagination"></div>
@@ -110,28 +105,69 @@
 </section> 
 
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modals -->
+
+@foreach($publications as $publication)
+  <div class="modal fade" id="testModal{{$publication->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{$publication->texts()->get()->where('type','title')->where('lang',Session::get('locale'))->pluck('content')->first()}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+
       <div class="modal-body">
-        ...
+        <div class="row">
+          <div class="profile col-sm-4"><img class="img-fluid" src="{{url('/images')}}/{{$publication->image()->get()->pluck('url')->first()}}" ></div>
+          <div class="description col-sm-8">
+            <p> <?php echo parsedown( $publication->texts()->get()->where('type','summary')->where('lang',Session::get('locale'))->pluck('content')->first() ); ?> </p>
+          </div>
+        </div>
       </div>
+
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <a href="{{url('download')}}/{{$publication->id}}"><span data-feather="download"></a>
       </div>
     </div>
   </div>
-</div>
+</div>       
+@endforeach
+
 
 <script>
+// setheight
+// $(function() {
+//   setheights();
+// });
+
+// $(window).resize(function() {
+//   setheights()
+
+// });
+
+// function setheights(){
+//   var maxHeight = 0;
+
+  // $(".carousel-item" ).each(function(){
+  //  var thisH = $(this).height();
+  //  if (thisH > maxHeight) { maxHeight = thisH; }
+  // });
+
+//   $(".carousel-item" ).height(maxHeight);
+//   console.log(maxHeight)
+
+//   $(".carousel-item" ).each(function() {
+//       var ownHeight = $(this).height();
+//       //var margin = (maxHeight - ownHeight)/2;
+//       console.log(ownHeight);
+//       //console.log(margin);
+//       //$(this).css('height', maxHeight);
+
+//   }); 
+// }
+
 
 var swiper = new Swiper('.swiper-container', {
       slidesPerView: 3,

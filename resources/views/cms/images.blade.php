@@ -39,7 +39,9 @@
             </div>
         </div>
     </div>
-<button type="submit" value="Upload" class="btn btn-secondary">Add</button>
+
+<button id="add" type="submit" value="Upload" class="btn btn-secondary">Add</button> &nbsp; <a class="btn btn-secondary" href="" onclick="clearform();return false;" role="button">Clear</a>
+
 </form>
 
 <br>
@@ -70,7 +72,7 @@
             <td style="vertical-align:middle; text-align:center;"><span class="imgurl{{$image->id}}">{{url('/images')}}/{{$image->url}}</span></td>
 
               <td style="vertical-align:middle"><a onclick="contentEdit('{{$image->id}}','{{$image->label}}')" class="btnextra"><span data-feather="edit-2"></a></td>
-                <td style="vertical-align:middle"><a onclick="contentDelete('{{$image->id}}','{{$image->label}}')" role="button" class="btnextra"><span data-feather="trash-2"></a></td>
+                <td style="vertical-align:middle"><a onclick="contentDelete('{{$image->id}}')" role="button" class="btnextra"><span data-feather="trash-2"></a></td>
 
         </tr>  
         @endforeach                      
@@ -99,32 +101,34 @@
     });
 });
 
- // Balance
 function contentEdit(imgid,label){
-   
+    clearform()
+
+    $('#upload-form').prop('action', '{{ url('dashboard/images')}}/edit/'+imgid);
+    $("#add").text("Edit");
+
+
+   $('#label').val(label);
 }    
 
-// Balance
-function contentDelete(mutid, url){
-       
+function clearform(){
+    $("#upload-form")[0].reset();
+    $("#add").text("Add");
+    $('#upload-form').prop('action', '{{ url('dashboard/images')}}');
+  return false; 
+};
+
+function contentDelete(id){
+var url = '{{url('/')}}/dashboard/images/delete';
+
 var check = confirm('Are you sure to delete this item?');
     if(check){
-        window.location.href = url; 
+        window.location.href = url+'/'+id; 
    }
    return false;
 };
 
 
-
-// var simplemde = new SimpleMDE({ 
-//     element: document.getElementById("TextEditor"),
-//     spellChecker: false,
-//     autosave: {
-//       enabled: true,
-//       uniqueId: "Markdown1",
-//       delay: 10000,
-//     }
-// });
 </script>   
 @endsection
 

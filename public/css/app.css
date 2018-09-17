@@ -78,13 +78,17 @@ a:active {
   border-bottom: 3px solid #7d3081;
 }
 
-.projectoverview a {
+.projectoverview a,
+.modal-footer a {
   color: black;
 }
 
 .projectoverview a:hover,
 .projectoverview a:focus,
-.projectoverview a:active {
+.projectoverview a:active,
+.modal-footer a:hover,
+.modal-footer a:focus,
+.modal-footer a:active {
   color: grey;
 }
 
@@ -106,7 +110,7 @@ a:active {
 
 .publicationoverview h3 {
   margin-bottom: 15px;
-  margin-top: 15px;
+  margin-top: 45px;
   border-bottom: 3px solid #7d3081;
 }
 

@@ -8,6 +8,7 @@ use Session;
 use App\Publication;
 use App\Image;
 use App\Text;
+use Illuminate\Support\Facades\Storage;
 
 class PublicationsController extends Controller
 {
@@ -76,8 +77,10 @@ class PublicationsController extends Controller
 
         Publication::find($publication->id)->update(['url'=> $url]);
 
-        $publication_file->move('../public/publications', $url); 
+        $publication_file->move('../public/storage', $url); 
+       
     }
+    
 
     $nltitle = Text::create([
             'lang' => 'nl',
@@ -114,59 +117,56 @@ class PublicationsController extends Controller
    public function edit(Publication $publication)
     { 
 
+      $label = 'publication'.$publication->id;
+
+      $base = base_path();
+
       if(request('image') != null){
         $image = request('image');
         $oldimage = $publication->image;      
 
         if(filesize($image) >= 2097152){
-              return redirect()->back()->withInput()->with('alert',__('alerts.filetoolarge'));
-          }
+          return redirect()->back()->withInput()->with('alert',__('alerts.filetoolarge'));
+         }
 
-          $base = base_path();
-          $base_total = $base.'/public/images/'.$publication->image->url;
+    
+        $base_total = $base.'/public/images/'.$publication->image->url;
 
-          if($oldimage->label != "default"){
-            $oldimage->delete();
-              unlink($base_total);
-            }
+        if($oldimage->label != "default"){
+          $oldimage->delete();
+          unlink($base_total);
+        }
 
-            $label = 'publication'.$publication->id;  
-            $url = $label.'.'.$image->getClientOriginalExtension();
+        $url = $label.'.'.$image->getClientOriginalExtension();
 
-          $image_data = Image::create([
-              'label' => $label,
-              'url' =>  $url,
-          ]);
+        $image_data = Image::create([
+          'label' => $label,
+          'url' =>  $url,
+        ]);
 
-          Publication::find($publication->id)->update(['image_id'=>$image_data->id]);
-          $image->move('../public/images', $url); 
+        Publication::find($publication->id)->update(['image_id'=>$image_data->id]);
+        $image->move('../public/images', $url); 
       }
 
       if(request('publication_file') != null){
         $publication_file = request('publication_file');
-        $old_publication = $publication->url;   
 
         if(filesize($publication_file) >= 2097152){
           return redirect()->back()->withInput()->with('alert',__('alerts.filetoolarge'));
+        }
+
+        if($publication->url != null){
+          $base_total = $base.'/public/storage/'.$publication->url;
+          unlink($base_total);
         }
 
         $url = $label.'.'.$publication_file->getClientOriginalExtension();
 
         Publication::find($publication->id)->update(['url'=> $url]);
 
-          $publication_file->move('../public/publications', $url);  
+        Storage::put($url, $publication_file);
 
-        
-          $base = base_path();
-          $base_total = $base.'/public/publications/'.$publication->url;
-          unlink($base_total);
-          
-
-          $label = 'publication'.$publication->id;  
-          $url = $label.'.'.$image->getClientOriginalExtension();
-
-          Publication::find($publication->id)->update(['url'=>$url]);
-          $image->move('../public/publications', $url); 
+        $publication_file->move('../public/storage', $url);         
       }
 
       $texts = $publication->texts;
@@ -191,7 +191,7 @@ class PublicationsController extends Controller
       $base = base_path();
 
       if($publication->url != null){
-        $base_total = $base.'/public/publications/'.$publication->url;
+        $base_total = $base.'/public/storage/'.$publication->url;
         unlink($base_total);
       }
 
@@ -207,6 +207,17 @@ class PublicationsController extends Controller
       $publication->delete(); 
      
       return back()->with('status', 'Succes!');
+    }
+
+    public function downloadpublication(Publication $publication)
+    {
+      $doc_url = $publication->url; 
+      if($doc_url != null){
+        $base = base_path();
+        return response()->download($base."/public/storage/".$doc_url);
+      } else {
+        return back();
+      }
     }
 
 }

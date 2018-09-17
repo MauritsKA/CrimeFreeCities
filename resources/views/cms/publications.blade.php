@@ -158,9 +158,6 @@ var ensummarymde = new SimpleMDE({
     });
 });
 
-$(function() {
- 
-});
 
 function clearform(){
     $("#upload-form")[0].reset();
@@ -188,37 +185,36 @@ function fillform(id){
     $('#upload-form').prop('action', '{{ url('dashboard/publications')}}/edit/'+id);
     $("#add").text("Edit");
 
-var publicationid = 1
-$.get('{{url('/dashboard/texts')}}', function(response){
-if(response.success)
-    
-responsedata = response;
+    $.get('{{url('/dashboard/texts')}}', function(response){
+    if(response.success)
+        
+    responsedata = response;
 
 
- var publicationdata = $.grep(responsedata.texts, function (element) {    
-    if(element.publications != undefined){
-        if(element.publications[0] != undefined){
-            return element.publications[0].id == id;
+     var publicationdata = $.grep(responsedata.texts, function (element) {    
+        if(element.publications != undefined){
+            if(element.publications[0] != undefined){
+                return element.publications[0].id == id;
+            }
         }
+    });
+
+    for(i=0; i<publicationdata.length; i++){
+        var lang = publicationdata[i].lang
+        var type = publicationdata[i].type
+        $('#'+lang + type).val(publicationdata[i].content);
+
+        if( publicationdata[i].content != null ){
+            if(lang == "nl" && type == "summary"){
+            nlsummarymde.value(publicationdata[i].content);
+            }
+
+            if(lang == "en" && type == "summary"){
+            ensummarymde.value(publicationdata[i].content);
+            }
+        }
+
     }
-});
-
-for(i=0; i<publicationdata.length; i++){
-    var lang = publicationdata[i].lang
-    var type = publicationdata[i].type
-    $('#'+lang + type).val(publicationdata[i].content);
-
-    if( publicationdata[i].content != null ){
-        if(lang == "nl" && type == "summary"){
-        nlsummarymde.value(publicationdata[i].content);
-        }
-
-        if(lang == "en" && type == "summary"){
-        ensummarymde.value(publicationdata[i].content);
-        }
-    }
-
-}
 
   }, 'json');
 }

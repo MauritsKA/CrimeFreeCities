@@ -142,14 +142,22 @@ function cross(x) {
 
 // Height management for carousel
 function setheight(){
-  var height = Math.max.apply(Math, $(".covercarousel .carousel-item").map(function () {
+  var height = Math.max.apply(Math, $(".carousel-item").map(function () {
     return $(this).height(); 
   })); 
-  $('.covercarousel .carousel-item').css('min-height',height);
+
+  $(".pslide" ).each(function(){
+   var thisH = $(this).height();
+     console.log($(this).height)
+  });
+
+  var margin = height 
+  $('.carousel-item').css('min-height',height);
+
 }
 
 function resetheight(){
-  $('.covercarousel .carousel-item').css('min-height',"");
+  $('.carousel-item').css('min-height',0);
   setheight();
 }
 </script>

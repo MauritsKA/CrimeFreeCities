@@ -23,7 +23,7 @@
 </li>
 
 <li class="nav-item">
-  <a class="nav-link" href="#">
+  <a class="nav-link" href="{{ url('dashboard/statistics')}}">
   <span data-feather="bar-chart-2"></span> @lang('cmsnav.statistics')
   </a>
 </li>
@@ -35,7 +35,7 @@
 </li>
 
 <li class="nav-item">
-  <a class="nav-link" href="#">
+  <a class="nav-link" href="{{ url('dashboard/settings')}}">
   <span data-feather="settings"></span> @lang('cmsnav.settings')
  </a>
 </li>
