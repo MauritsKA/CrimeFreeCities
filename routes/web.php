@@ -61,5 +61,5 @@ Route::get('/dashboard/statistics/delete/{statistic}', 'StatisticsController@del
 
 Route::get('/dashboard/practices', 'PracticesController@index');
 Route::post('/dashboard/practices', 'PracticesController@add');
-Route::post('/dashboard/practices/edit/{statistic}', 'PracticesController@edit');
-Route::get('/dashboard/practices/delete/{statistic}', 'PracticesController@delete');
+Route::post('/dashboard/practices/edit/{practice}', 'PracticesController@edit');
+Route::get('/dashboard/practices/delete/{practice}', 'PracticesController@delete');

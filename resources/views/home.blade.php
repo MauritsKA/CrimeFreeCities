@@ -15,7 +15,7 @@
         <?php $counter = 0; ?>
         @foreach($facts as $fact)
           <div class="carousel-item {{$counter == 0 ? 'active' : ''}}">
-            <div class="pslide"><p class="d-block w-60" alt="{{$fact->id}} slide">{{$fact->content}}</p></div>
+            <div class="pslide"><p class="d-block w-60" alt="{{$fact->id}} slide">{{   $fact->texts()->get()->where('type','summary')->where('lang',Session::get('locale'))->pluck('content')->first()}}</p></div>
           </div>
         <?php $counter++; ?>  
         @endforeach

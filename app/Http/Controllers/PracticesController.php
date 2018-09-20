@@ -11,7 +11,7 @@ class PracticesController extends Controller
     public function __construct()
     {
         $this->middleware('setlocale');
-         $this->middleware('auth')->except('display');
+        $this->middleware('auth')->except('display');
     }
 
        public function display()
@@ -28,6 +28,20 @@ class PracticesController extends Controller
 
   	   public function add()
     {	
+    	$practices = Practice::orderBy('created_at', 'desc')->get();
+    	$count = count($practices);
+    	if($count > 0){
+    		return redirect()->back()->withInput()->with('alert', "You can only add one practices section"); 
+    	}
+
+    	if(request('ensummary') == null){
+    		return redirect()->back()->withInput()->with('alert', "You have to fill in all languages"); 
+    	}
+
+    	if(request('nlsummary') == null){
+    		return redirect()->back()->withInput()->with('alert', "You have to fill in all languages"); 
+    	}
+
         $practice = Practice::create([ ]);
 
 	    $nlsummary = Text::create([
@@ -50,8 +64,8 @@ class PracticesController extends Controller
     public function edit(Practice $practice)
     { 
 
-      $texts = $practice->texts();
-dd($texts);
+      $texts = $practice->texts;
+
       foreach($texts as $text){
       $lang = $text->lang;
       $type = $text->type;

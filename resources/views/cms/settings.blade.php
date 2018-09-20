@@ -18,11 +18,6 @@
     {{ session('status') }}
     </div>
 @endif
-
-<h5>Hi {{ $user->name}}, </h5>
-<br>
-
-
 <h5>Email</h5>
 <p>{{ $user->email}}</p> 
 <form class="form-inline" method="POST" id="emailform" action="{{ url('dashboard/settings/email')}}">

@@ -20,7 +20,8 @@ class Dashboardcontroller extends Controller
 
     public function index()
     {
-        return view('cms.dashboard');
+        $user = Auth::user();
+        return view('cms.dashboard', compact('user'));
     }
 
     public function texts()

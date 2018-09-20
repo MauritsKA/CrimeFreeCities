@@ -28,14 +28,14 @@
     <div class="col-lg-6">
         <div class="form-group">
             <label for="nlsummary">Werkwijzen (NL)</label>
-            <textarea class="form-control" id="nlsummary"  name="nlsummary"  rows="5" placeholder="Samenvatting"></textarea>
+            <textarea class="form-control" id="nlsummary"  name="nlsummary"  rows="5" placeholder="Samenvatting" required></textarea>
         </div>
     </div>
 
     <div class="col-lg-6">
         <div class="form-group">
             <label for="ensummary">Practices (EN)</label>
-            <textarea class="form-control" id="ensummary"  name="ensummary"  rows="5" placeholder="Summary"></textarea>
+            <textarea class="form-control" id="ensummary"  name="ensummary"  rows="5" placeholder="Summary" required></textarea>
         </div>
     </div>
 </div>
@@ -57,6 +57,7 @@
 @section('scripts')
 
 <script>
+    
 var nlsummarymde = new SimpleMDE({ 
     element: document.getElementById("nlsummary"),
     spellChecker: false,
@@ -99,10 +100,8 @@ var check = confirm('Are you sure to delete this item?');
 };
 
 // Call AJAX and update overviews
-function fillform(){
+function fillform(id){
     clearform()
-
-    var id=1;
 
     $('#upload-form').prop('action', '{{ url('dashboard/practices')}}/edit/'+id);
     $("#add").text("Edit");

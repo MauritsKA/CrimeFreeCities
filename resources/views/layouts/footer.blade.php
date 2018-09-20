@@ -10,15 +10,6 @@
     <div class="profile col-sm-4"><img class="img-fluid" src="images/profile.png" ></div>
     <div class="description col-sm-8">
     <p>Would you like to know more? I'd love to grab a coffee and discuss possible ideas and opportunities. I am open to any challenge in urban planning, safety and project management.</p>
-        <p><a href="{{url('/about')}}">Read more -></a><br>
-            @guest
-           <a href="{{ route('login') }}">Login</a>
-        @else
-          <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> Logout </a>
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-      {{ csrf_field() }}
-      </form>
-        @endguest</p>
     </div>
   </div>
         </div>

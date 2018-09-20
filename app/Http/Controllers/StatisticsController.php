@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App;
 use Session;
 use App\Statistic;
+use App\Text;
 
 class StatisticsController extends Controller
 {
@@ -45,33 +46,22 @@ class StatisticsController extends Controller
       ]);
       $fact->texts()->attach($ensummary->id);
 
-      return redirect()->back()->withInput()->with('status', "Succesfully added practices"); 
-
-    	 if(request('fact') != null){
-
-    	 $fact = request('fact');
-
-        $fact_data = Statistic::create([
-            'content' => $fact,
-        ]);
-    		return redirect()->back()->withInput()->with('status', "Succesfully added fact");
-    	} else {
-    		return redirect()->back()->withInput()->with('alert', "You should add text");
-    	}	 
+      return redirect()->back()->withInput()->with('status', "Succesfully added fact");  
     }
 
      public function edit(Statistic $statistic)
     { 
-    	if(request('fact') != null){
-    	$fact = request('fact');
+      $texts = $statistic->texts;
 
-        Statistic::find($statistic->id)->update(['content'=>$fact]);
- 
-     	return redirect()->back()->withInput()->with('status', "Succesfully changed fact");
+      foreach($texts as $text){
+      $lang = $text->lang;
+      $type = $text->type;
 
-    	} else {
-    		return redirect()->back()->withInput()->with('alert', "You should add text");
-    	}	 
+      if($lang == "en" && $type == "summary"){ $text->update([ 'content' => request('ensummary') ]); } 
+      if($lang == "nl" && $type == "summary"){ $text->update([ 'content' => request('nlsummary') ]); }
+      }
+    
+    return back()->with('status', 'Succes!'); 
  
   }
 

@@ -33,7 +33,7 @@
 
     <div class="col-lg-6">
         <div class="form-group">
-            <label for="ensummary">Fact)</label>
+            <label for="ensummary">Fact</label>
             <textarea class="form-control" id="ensummary"  name="ensummary"  rows="5" placeholder="" value="{{ old('fact') }}" required></textarea>
         </div>
     </div>
@@ -58,7 +58,7 @@
     <tbody> 
         @foreach($facts as $fact)
         <tr>
-            <td style="vertical-align:middle; text-align:center;">{{$fact->content}}</td>
+            <td style="vertical-align:middle; text-align:center;">{{   $fact->texts()->get()->where('type','summary')->where('lang',Session::get('locale'))->pluck('content')->first()}}</td>
 
              <td style="vertical-align:middle"><a onclick="fillform('{{$fact->id}}')" class="btnextra"><span data-feather="edit-2"></a></td>
             <td style="vertical-align:middle"><a onclick="contentDelete('{{$fact->id}}')" role="button" class="btnextra"><span data-feather="trash-2"></a></td>
@@ -80,14 +80,25 @@ function fillform(id){
     $('#upload-form').prop('action', '{{ url('dashboard/statistics')}}/edit/'+id);
     $("#add").text("Edit");
 
-    $.get('{{url('/dashboard/facts')}}', function(response){
+    $.get('{{url('/dashboard/texts')}}', function(response){
     if(response.success){
 
         responsedata = response;
 
-        var fact = responsedata.facts.find(item=> item.id == id)
-     
-        $('#fact').html(fact.content);
+        var statisticdata = $.grep(responsedata.texts, function (element) {    
+        if(element.statistics != undefined){
+            if(element.statistics[0] != undefined){
+                return element.statistics[0].id == id;
+            }
+        }
+    });
+
+      for(i=0; i<statisticdata.length; i++){
+        var lang = statisticdata[i].lang
+        var type = statisticdata[i].type
+        $('#'+lang + type).val(statisticdata[i].content);
+    }
+
     }
   }, 'json');
 } 

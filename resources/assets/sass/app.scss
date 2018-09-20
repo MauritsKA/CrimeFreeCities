@@ -1,8 +1,9 @@
 /* Master CSS
 -------------------------------------------------- */
-$color1: rgb(55,103,17);
-$color2: rgb(125,48,129);
-$color3: rgb(62,215,21);
+$color1: rgb(55,103,17); /* green */
+$color2: rgb(125,48,129); /* purple */
+$color3: rgb(62,215,21);  /* lightgreen */
+$color4: rgb(134,216,253); /* experiment */
 
 html {
   position: relative;
@@ -36,7 +37,7 @@ a:hover, a:focus, a:active{
 
 .cover{
     min-height: 100vh;
-    background: url("/crimefreecities/public/images/cover5.png") no-repeat center;
+    background: url("/crimefreecities/public/images/cover.jpg") no-repeat center;
     background-size: cover;
     text-align: center;
     position: relative;

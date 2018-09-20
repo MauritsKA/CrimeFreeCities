@@ -103,7 +103,7 @@
                 -o-background-size: cover;"></div></td>
 
             <td style="vertical-align:middle; text-align:center;">{{   $publication->texts()->get()->where('type','title')->where('lang',Session::get('locale'))->pluck('content')->first()}}</td>
-            <td style="vertical-align:middle; text-align:center;">{{   $publication->texts()->get()->where('type','summary')->where('lang',Session::get('locale'))->pluck('content')->first()}}</td>
+            <td style="vertical-align:middle; text-align:center;"> <?php echo parsedown( $publication->texts()->get()->where('type','summary')->where('lang',Session::get('locale'))->pluck('content')->first() ); ?> </td>
 
             <td style="vertical-align:middle"><a onclick="fillform('{{$publication->id}}')" class="btnextra"><span data-feather="edit-2"></a></td>
             <td style="vertical-align:middle"><a onclick="contentDelete('{{$publication->id}}')" role="button" class="btnextra"><span data-feather="trash-2"></a></td>
@@ -189,7 +189,6 @@ function fillform(id){
     if(response.success)
         
     responsedata = response;
-
 
      var publicationdata = $.grep(responsedata.texts, function (element) {    
         if(element.publications != undefined){
