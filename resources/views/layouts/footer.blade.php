@@ -20,7 +20,7 @@
           <div class="contactitem"> <i class="contactfeather" data-feather="search"></i><span class="contacttext">KVK 66996422</span></div>
           <div class="contactitem"> <i class="contactfeather" data-feather="mail"></i><span class="contacttext"><a href="mailto:hj@crimefreecities.com">harmjan@crimefreecities.com</a></span></div>
           <div class="contactitem"> <i class="contactfeather" data-feather="map-pin"></i><span class="contacttext"><a href="https://www.google.nl/maps/place/President+Kennedylaan+10,+3971+KP+Driebergen-Rijsenburg/@52.0514027,5.2889554,17z/data=!3m1!4b1!4m5!3m4!1s0x47c65ce081ff0293:0x557ae8943224e3ca!8m2!3d52.0514027!4d5.2911441">Driebergen, Nederland</a></span></div>
-          <div class="contactitem"> <i class="contactfeather" data-feather="phone"> </i><a href="tel:+316 43216660"><span class="contacttext">06 43216660</a></span></div>
+          <div class="contactitem"> <i class="contactfeather" data-feather="phone"> </i><a href="tel:+316 43216660"><span class="contacttext">06 22617742</a></span></div>
           <div class="contactitem"> <i class="contactfeather" data-feather="linkedin"> </i><span class="contacttext"><a href="https://www.linkedin.com/in/harmjankorthalsaltes/">Harm Jan</a></span></div>
         </div>
   		</div>
