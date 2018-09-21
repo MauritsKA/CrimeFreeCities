@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost/crimefreecities/public'),
+    'url' => env('APP_URL', 'https:://crimefreecities.com'),
 
     /*
     |--------------------------------------------------------------------------
