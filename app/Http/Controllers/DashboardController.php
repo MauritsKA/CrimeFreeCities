@@ -10,7 +10,7 @@ use Auth;
 use App\User;
 use App\Statistic;
 
-class Dashboardcontroller extends Controller
+class DashboardController extends Controller
 {
     public function __construct()
     {
