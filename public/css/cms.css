@@ -29,6 +29,11 @@ body {
   cursor: hand;
 }
 
+.markdowndiv img {
+  width: 100%;
+  max-width: 600px;
+}
+
 /* Sidebar 
 -------------------------------------------------- */
 .sidebar {

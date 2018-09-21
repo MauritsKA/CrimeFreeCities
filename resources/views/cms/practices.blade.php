@@ -48,8 +48,8 @@
 @foreach($practices as $practice)
 <a onclick="fillform('{{$practice->id}}')" class="btnextra"><span data-feather="edit-2"></a>
 <a onclick="contentDelete('{{$practice->id}}')" role="button" class="btnextra"><span data-feather="trash-2"></a> 
-
-<p><?php echo parsedown( $practice->texts()->get()->where('type','summary')->where('lang',Session::get('locale'))->pluck('content')->first() ); ?> </p>
+<div class="markdowndiv">
+<?php echo parsedown( $practice->texts()->get()->where('type','summary')->where('lang',Session::get('locale'))->pluck('content')->first() ); ?></div>
 @endforeach
 
 @endsection

@@ -10,7 +10,7 @@
 <section class="practices section">
    <div class="container">
     @foreach($practices as $practice)
-   <?php echo parsedown( $practice->texts()->get()->where('type','summary')->where('lang',Session::get('locale'))->pluck('content')->first() ); ?> 
+ <div class="markdowndiv">  <?php echo parsedown( $practice->texts()->get()->where('type','summary')->where('lang',Session::get('locale'))->pluck('content')->first() ); ?> </div>
    @endforeach
   </div>
 </section>

@@ -26,6 +26,11 @@ a:hover, a:focus, a:active {
   color: grey;
 }
 
+.markdowndiv img {
+  width: 100%;
+  max-width: 600px;
+}
+
 /* Sections   
 -------------------------------------------------- */
 .section {
