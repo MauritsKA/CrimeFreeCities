@@ -1,14 +1,9 @@
 /* Master CSS
 -------------------------------------------------- */
-
 /* green */
-
 /* purple */
-
 /* lightgreen */
-
 /* experiment */
-
 html {
   position: relative;
   min-height: 100%;
@@ -27,22 +22,19 @@ a {
   text-decoration: none !important;
 }
 
-a:hover,
-a:focus,
-a:active {
+a:hover, a:focus, a:active {
   color: grey;
 }
 
 /* Sections   
 -------------------------------------------------- */
-
 .section {
   padding: 50px 0;
 }
 
 .cover {
   min-height: 100vh;
-  background: url("/crimefreecities/images/cover.jpg") no-repeat center;
+  background: url("../images/cover.jpg") no-repeat center;
   background-size: cover;
   text-align: center;
   position: relative;
@@ -86,17 +78,11 @@ a:active {
   border-bottom: 3px solid #7d3081;
 }
 
-.projectoverview a,
-.modal-footer a {
+.projectoverview a, .modal-footer a {
   color: black;
 }
 
-.projectoverview a:hover,
-.projectoverview a:focus,
-.projectoverview a:active,
-.modal-footer a:hover,
-.modal-footer a:focus,
-.modal-footer a:active {
+.projectoverview a:hover, .projectoverview a:focus, .projectoverview a:active, .modal-footer a:hover, .modal-footer a:focus, .modal-footer a:active {
   color: grey;
 }
 
@@ -130,9 +116,7 @@ a:active {
   color: black;
 }
 
-.publicationoverview a:hover,
-.publicationoverview a:focus,
-.publicationoverview a:active {
+.publicationoverview a:hover, .publicationoverview a:focus, .publicationoverview a:active {
   color: grey;
 }
 
@@ -151,12 +135,7 @@ a:active {
   color: black;
 }
 
-.statistics a:hover,
-.statistics a:focus,
-.statistics a:active,
-.publications a:hover,
-.publications a:focus,
-.publications a:active {
+.statistics a:hover, .statistics a:focus, .statistics a:active, .publications a:hover, .publications a:focus, .publications a:active {
   color: grey;
 }
 
@@ -194,7 +173,6 @@ a:active {
   .personal .profile {
     text-align: right;
   }
-
   .personal .description {
     text-align: left;
   }
@@ -204,7 +182,6 @@ a:active {
   .description p {
     text-align: justify;
   }
-
   .profile {
     margin-top: 5px !important;
     margin-bottom: 5px !important;
@@ -238,7 +215,7 @@ a:active {
 
 .topcover {
   min-height: 25vh;
-  background: url("/crimefreecities/images/cover.jpg") no-repeat center;
+  background: url("../images/cover.jpg") no-repeat center;
   background-size: cover;
   text-align: center;
   position: relative;
@@ -255,7 +232,6 @@ a:active {
 
 /* Swiper  
 -------------------------------------------------- */
-
 .swiper-container {
   width: 100%;
   height: 100%;
@@ -279,7 +255,6 @@ a:active {
 
 /* footer & subfooter  
 -------------------------------------------------- */
-
 .topfooter {
   background: #696969;
   color: white;
@@ -333,7 +308,6 @@ h3 {
 
 /* nav  
 -------------------------------------------------- */
-
 .navbar-collapse.collapse.in {
   display: block !important;
 }
@@ -382,9 +356,7 @@ h3 {
   cursor: pointer;
 }
 
-.bar1,
-.bar2,
-.bar3 {
+.bar1, .bar2, .bar3 {
   width: 35px;
   height: 5px;
   background-color: white;
@@ -393,9 +365,7 @@ h3 {
   transition: 0.4s;
 }
 
-.withBackground .bar1,
-.withBackground .bar2,
-.withBackground .bar3 {
+.withBackground .bar1, .withBackground .bar2, .withBackground .bar3 {
   width: 35px;
   height: 5px;
   background-color: #376711;
@@ -405,28 +375,23 @@ h3 {
 }
 
 /* Rotate first bar */
-
 .change .bar1 {
   -webkit-transform: rotate(-45deg) translate(-9px, 6px);
   transform: rotate(-45deg) translate(-9px, 6px);
 }
 
 /* Fade out the second bar */
-
 .change .bar2 {
   opacity: 0;
 }
 
 /* Rotate last bar */
-
 .change .bar3 {
   -webkit-transform: rotate(45deg) translate(-8px, -8px);
   transform: rotate(45deg) translate(-8px, -8px);
 }
 
-.custom-toggler.navbar-toggler:active,
-.custom-toggler.navbar-toggler:focus,
-.custom-toggler.navbar-toggler:hover {
+.custom-toggler.navbar-toggler:active, .custom-toggler.navbar-toggler:focus, .custom-toggler.navbar-toggler:hover {
   outline: none !important;
 }
 
@@ -448,8 +413,7 @@ h3 {
   color: #376711 !important;
 }
 
-.nav-link:hover,
-.nav-link:focus {
+.nav-link:hover, .nav-link:focus {
   border-bottom: 3px solid #7d3081;
   padding-bottom: 3px;
 }
@@ -491,4 +455,3 @@ h3 {
     margin-left: 8px;
   }
 }
-
