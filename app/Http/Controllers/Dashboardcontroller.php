@@ -58,7 +58,7 @@ class Dashboardcontroller extends Controller
         Auth::user()->update(['email'=>request('email')]);
         }
         
-        return back()->with('status', 'Succesfully changed your email!');
+        return back()->with('status',__('status.emailsucces'));
     }
     
     public function password(Request $request)
@@ -70,10 +70,10 @@ class Dashboardcontroller extends Controller
         if ($request->password == $request->password_confirmation){
         Auth::user()->update(['password'=> bcrypt($request->password)]);
 
-        return back()->with('status', 'Succesfully changed your password!');
+        return back()->with('status', __('status.passwordsucces'));
         } 
         
-      return back()->with('alert', 'Something went wrong!');
+      return back()->with('alert',__('alerts.something'));
     }
 
 

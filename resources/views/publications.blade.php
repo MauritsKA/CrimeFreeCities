@@ -9,8 +9,8 @@
 
 <section class="publicationintro section">
    <div class="container">
-   <h3>publications</h3>
-    <p>Een intro voor de publication sessies, met uitleg wat er in staat en hoe het verdeeld is, met misschien een kleine algemene uitleg over de soort publicationen die je doet. 
+   <h3>{{ucfirst(__('nav.publications'))}}</h3>
+    <p>
     </p>
   </div>
 </section>

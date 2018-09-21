@@ -6,7 +6,7 @@
     </div>
 
     <div style="text-align:center; padding-top:20px; padding-bottom:20px; " >
-      <a href="http://crimefreecities.com/" class="btn btn-outline-secondary" target="_blank">View site</a> 
+      <a href="http://crimefreecities.com/" class="btn btn-outline-secondary" target="_blank">{{ucfirst(__('dashboard.viewsite'))}}</a> 
     </div>
     
     <ul class="nav flex-column">

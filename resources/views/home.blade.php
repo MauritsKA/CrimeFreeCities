@@ -37,15 +37,15 @@
 
 <section class="projects section">
    <div class="container">
-   <h3>Projects</h3>
-    <p>Crime is concentrated mainly in cities. In the Netherlands, for example, the chance of becoming a victim of a crime such as burglary or robbery in urbanised areas is 2-5 times higher than in rural areas (see ‘statistics’ for more information). Crime prevention is most urgent in urbanised areas. For this reason, the content of this website is focused  on crime prevention in cities with a population of 75.000 and more. </p>
+   <a href='projects'><h3>Project {{__('home.projecttitle')}}</h3></a>
+    <p>{{__('home.projectcontent')}} (<a href='projects'>read more...</a>)</p>
   </div>
 </section>
 
 <section class="publications section">
 
    <div class="container">
-    <h3>Publications</h3>
+    <a href='publications'><h3>{{ucfirst(__('nav.publications'))}}</h3></a>
   <!-- Slider main container -->
     <div class="swiper-container">
         <!-- Additional required wrapper -->
@@ -70,12 +70,12 @@
 
 <section class="practices section">
    <div class="container">
-   <h3>Practices</h3>
+   <a href='practices'><h3>{{ucfirst(__('nav.practices'))}}</h3></a>
    <div class="row">
      <div class="col-md-6" > 
      <h5>Creating confidence</h5> 
       <p class=" text-justify">The central theme in all approaches to crime prevention is, in my vison, confidence. People in neighbourhoods should be able to trust each other as well as their city government and their local police force. Government and police should be rooted steadily into the neighbourhoods. 
-      In the city centre and in industrial zones, local entrepreneurs should take confidence  in their government and prevent crime together. Tailor made public private partnerships should emerge, in which all stakeholders invest in crime prevention, according to their possibilities.
+      In the city centre and in industrial zones, local entrepreneurs should take confidence  in their government and prevent crime together. Tailor made public private partnerships should emerge, in which all stakeholders invest in crime prevention, according to their possibilities. 
       </p>
     </div>
       <div class="col-md-6 ">  
@@ -89,7 +89,7 @@
 
 <section class="statistics section">
    <div class="container">
-   <h3>Statistics</h3>
+   <a href='statistics'><h3>{{ucfirst(__('nav.statistics'))}}</h3></a>
    <div class="row">
      <div class="col-md-5 mr-auto" > 
       <p class=" text-justify">Crime is concentrated mainly in cities. In the Netherlands, for example, the chance of becoming a victim of a crime such as burglary or robbery in urbanised areas is 2-5 times higher than in rural areas (see ‘statistics’ for more information). Crime prevention is most urgent in urbanised areas. For this reason, the content of this website is focused  on crime prevention in cities with a population of 75.000 and more.

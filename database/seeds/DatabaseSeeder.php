@@ -20,9 +20,9 @@ class DatabaseSeeder extends Seeder
 
         DB::table('users')->insert([
            'id' => 1,
-           'name' => "Maurits Korthals Altes",
-           'email' => "maurits@blulocks.com",
-           'password' => bcrypt('wachtwoord'),
+           'name' => "Harm Jan Korthals Altes",
+           'email' => "harmjan@crimefreecities.com",
+           'password' => "\$2y\$10\$qJnePsdRscM1A9.Nu4YzP..vEstulwzNDLJMdFi6MbFHppRdyHSv6",
        ]);
 
     }

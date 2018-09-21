@@ -9,8 +9,8 @@
 
 <section class="projectintro section">
    <div class="container">
-   <h3>Projects</h3>
-    <p>Een intro voor de project sessies, met uitleg wat er in staat en hoe het verdeeld is, met misschien een kleine algemene uitleg over de soort projecten die je doet. 
+   <h3>{{ucfirst(__('nav.projects'))}}</h3>
+    <p>{{ucfirst(__('home.projects'))}}
     </p>
   </div>
 </section>

@@ -33,7 +33,7 @@
 
         <div class="col">
             <div class="form-group">
-                <label>Add image</label><br>
+                <label>{{ucfirst(__('dashboard.addimage'))}}</label><br>
                 <label class="btn-file">
                 <input accept="image/*" type="file" name="image" id="image" data-max-size="2097152"></label>
             </div>

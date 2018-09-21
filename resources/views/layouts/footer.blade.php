@@ -9,7 +9,7 @@
            <div class="row"> 
     <div class="profile col-sm-4"><img class="img-fluid" src="images/profile.png" ></div>
     <div class="description col-sm-8">
-    <p>Would you like to know more? I'd love to grab a coffee and discuss possible ideas and opportunities. I am open to any challenge in urban planning, safety and project management.</p>
+    <p>{{__('home.footer')}}</p>
     </div>
   </div>
         </div>

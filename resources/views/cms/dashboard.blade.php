@@ -1,7 +1,7 @@
 @extends('cms.layouts.master')
 
 @section('title')
-<h1 class="h2">Dashboard</h1>
+<h1 class="h2">{{ucfirst(__('dashboard.dashboard'))}}</h1>
 @endsection
 
 @section('content')

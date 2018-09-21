@@ -76,12 +76,12 @@ class ImagesController extends Controller
         Image::find($old_image->id)->update(['label'=>$label,'url'=>$url]);
         $new_image->move('../public/images', $url); 
 
-        return back()->with('status', 'Changed image!'); 
+        return back()->with('status', __('status.imageadded')); 
       }
 
     Image::find($old_image->id)->update(['label'=>$label]);
 
-    return back()->with('status', 'Changed label!'); 
+    return back()->with('status', __('status.labeledit')); 
   }
 
    public function delete(Image $old_image)
@@ -100,7 +100,7 @@ class ImagesController extends Controller
         unlink($base_total);
       }
      
-      return back()->with('status', 'Succes!');
+      return back()->with('status', __('status.imagedelete'));
     }
 
 }

@@ -18,7 +18,7 @@
       @include('cms.layouts.navlist')
 
       <li class="nav-item">
-        <a class="nav-link logoutcollapse" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span data-feather="log-out"></span>Logout         
+        <a class="nav-link logoutcollapse" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span data-feather="log-out"></span>{{__('dashboard.logout')}}        
         </a>
         
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
