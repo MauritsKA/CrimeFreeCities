@@ -28,14 +28,14 @@
     <div class="col-lg-6">
         <div class="form-group">
             <label for="nlsummary">Werkwijzen (NL)</label>
-            <textarea class="form-control" id="nlsummary"  name="nlsummary"  rows="5" placeholder="Samenvatting" required></textarea>
+            <textarea class="form-control" id="nlsummary"  name="nlsummary"  rows="5" placeholder="Samenvatting"></textarea>
         </div>
     </div>
 
     <div class="col-lg-6">
         <div class="form-group">
             <label for="ensummary">Practices (EN)</label>
-            <textarea class="form-control" id="ensummary"  name="ensummary"  rows="5" placeholder="Summary" required></textarea>
+            <textarea class="form-control" id="ensummary"  name="ensummary"  rows="5" placeholder="Summary" ></textarea>
         </div>
     </div>
 </div>

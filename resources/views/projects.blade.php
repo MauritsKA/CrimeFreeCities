@@ -24,7 +24,7 @@
         <h3>{{ $project->texts()->get()->where('type','title')->where('lang',Session::get('locale'))->pluck('content')->first()}}</h3>
         <div class="row">
           <div class="profile col-sm-4"><img class="img-fluid" src="{{url('/images')}}/{{$project->image()->get()->pluck('url')->first()}}" ></div>
-          <div class="description col-sm-8">
+          <div class="description col-sm-8" style="   text-align: left;">
           <p> <?php echo parsedown( $project->texts()->get()->where('type','summary')->where('lang',Session::get('locale'))->pluck('content')->first() ); ?> </p>
           </div>
         </div>
