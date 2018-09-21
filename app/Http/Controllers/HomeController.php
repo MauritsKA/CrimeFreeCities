@@ -19,6 +19,16 @@ class HomeController extends Controller
     
     public function display()
     {
+        $extension = pathinfo($_SERVER['SERVER_NAME'], PATHINFO_EXTENSION);
+    
+        if($extension == "com"){
+         session(['locale' => "en"]);
+        }
+
+        if($extension == "nl"){
+         session(['locale' => "nl"]);
+        }
+
         $facts = Statistic::orderBy('created_at', 'desc')->get();
         $publications = Publication::orderBy('created_at', 'desc')->get();
         return view('home', compact('publications','facts'));
