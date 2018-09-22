@@ -9,7 +9,7 @@
 
 <section class="statistics section">
    <div class="container" >
-   <h3>Statistics</h3>
+   <h3>{{ucfirst(__('nav.statistics'))}}</h3>
  
     @if(Session::get('locale') == "nl")
       <p> Deze pagina is onder constructie. Binnenkort leest u hier de vragen aan de orde gesteld waar u ongetwijfeld graag antwoord op wilt:</p>

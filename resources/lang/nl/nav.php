@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'statistics' => 'statistiek',
+    'statistics' => 'statistieken',
     'projects' => 'projecten',
     'publications' => 'publicaties',
     'contact' => 'contact',  

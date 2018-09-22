@@ -16,8 +16,18 @@ class SetLocale
      */
     public function handle($request, Closure $next)
     {
+        // $extension = pathinfo($_SERVER['SERVER_NAME'], PATHINFO_EXTENSION);
+    
+        // if($extension == "com"){
+        //  session(['locale' => "en"]);
+        // }
+
+        // if($extension == "nl"){
+        //  session(['locale' => "nl"]);
+        // }
+
         if(Session::get('locale') == null){
-            session(['locale' => 'en']);
+            session(['locale' => 'nl']);
         }
         
         if(Session::has('locale')) {

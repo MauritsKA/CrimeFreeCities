@@ -16,7 +16,7 @@ class PublicationsController extends Controller
   public function __construct()
   {
     $this->middleware('setlocale');
-    $this->middleware('auth')->except('display');
+    $this->middleware('auth', ['except' => ['display', 'downloadpublication']]);
   }
 
   public function display()
@@ -37,17 +37,24 @@ class PublicationsController extends Controller
   { 
 
     $publication = Publication::create([ ]);
-
     $label = 'publication'.$publication->id;
-     
-    if(request('image') != null){
 
-      $image = request('image');
+    $image = request('image');
+    $publication_file = request('publication_file');
 
+    if($image != null){ 
       if(filesize($image) >= 2097152){
             return redirect()->back()->withInput()->with('alert',__('alerts.filetoolarge'));
         }
+    };
 
+    if($publication_file != null){
+      if(filesize($publication_file) >= 2097152){
+        return redirect()->back()->withInput()->with('alert',__('alerts.filetoolarge'));
+      }
+    };
+     
+    if($image != null){
         if(Image::where('label',$label)->get()->first() != null){
             return redirect()->back()->withInput()->with('alert', __('alerts.usedlabel'));
         }
@@ -66,13 +73,7 @@ class PublicationsController extends Controller
       Publication::find($publication->id)->update(['image_id'=>1]);
     }
 
-     if(request('publication_file') != null){
-
-      $publication_file = request('publication_file');
-
-      if(filesize($publication_file) >= 2097152){
-        return redirect()->back()->withInput()->with('alert',__('alerts.filetoolarge'));
-      }
+     if($publication_file != null){
 
         $url = $label.'.'.$publication_file->getClientOriginalExtension();
 
