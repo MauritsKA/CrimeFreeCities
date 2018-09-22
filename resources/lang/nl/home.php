@@ -10,5 +10,6 @@ return [
     'footer' => 'Door jaren ervaring in onderzoek over onderwerp in ruimtelijke ordening heb ik inzicht in de beste werkwijzen om criminaliteitspreventie toe te passen. Neem vooral contact op voor advies op maat. Ik sta open voor elke uitdaging in ruimtelijke ordening, veiligheid en project management.',
     'projects' => 'Een intro voor de projecten, met uitleg wat er in staat en hoe het verdeeld is, met misschien een kleine algemene uitleg over de soort projecten die je doet.',
     'publications' => 'Een intro voor de publicaties, met uitleg wat er in staat en hoe het verdeeld is, met misschien een kleine algemene uitleg over de soort publicaties die je doet.',
+    'hi' => 'Maak kennis',
 ];
 

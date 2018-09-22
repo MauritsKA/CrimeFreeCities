@@ -5,7 +5,7 @@
       <div class="row">
       <div class="col-md-5 mr-auto">
         <div class="contactleft">
-      	   <h3>Say hi</h3>
+      	   <h3>{{__('home.hi')}}</h3>
            <div class="row"> 
     <div class="profile col-sm-4"><img class="img-fluid" src="images/profile.png" ></div>
     <div class="description col-sm-8">

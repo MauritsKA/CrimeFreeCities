@@ -10,5 +10,6 @@ return [
     'footer' => 'Through my years of experience in research on the topics of urban planning I have insight in best practices to reduce urban crime. Feel free to contact for tailored advice. I am open to any challenge in urban planning, safety and project management.',
     'projects' => 'Een intro voor de projecten, met uitleg wat er in staat en hoe het verdeeld is, met misschien een kleine algemene uitleg over de soort projecten die je doet.',
     'publications' => 'Een intro voor de publicaties, met uitleg wat er in staat en hoe het verdeeld is, met misschien een kleine algemene uitleg over de soort publicaties die je doet.',
+    'hi' => 'Say hi', 
 ];
 
