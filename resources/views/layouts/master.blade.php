@@ -23,7 +23,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.0/js/swiper.js"></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?')}}{{rand(1,100)}}" rel="stylesheet">
+    <link href="{{ asset('css/app.css')}}" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     @yield('css')
