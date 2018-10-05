@@ -7,11 +7,9 @@
   <div class="topcoveroverlay"></div>
 </section>    
 
-<section class="projectintro section">
+<section class="introsection">
    <div class="container">
-   <h3>{{ucfirst(__('nav.projects'))}}</h3>
-    <p>{{ucfirst(__('home.projects'))}}
-    </p>
+   <h1>{{ucfirst(__('nav.projects'))}}</h1>
   </div>
 </section>
 

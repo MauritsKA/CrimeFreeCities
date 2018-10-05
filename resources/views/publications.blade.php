@@ -7,11 +7,9 @@
   <div class="topcoveroverlay"></div>
 </section>    
 
-<section class="publicationintro section">
+<section class="introsection">
    <div class="container">
-   <h3>{{ucfirst(__('nav.publications'))}}</h3>
-    <p>
-    </p>
+   <h1>{{ucfirst(__('nav.publications'))}}</h1>
   </div>
 </section>
 

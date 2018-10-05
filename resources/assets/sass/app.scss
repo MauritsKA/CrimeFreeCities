@@ -64,10 +64,11 @@ a:hover, a:focus, a:active{
     color: white;
 }  
 
-.projectintro{
+.introsection{
     background: $color1;
     text-align: center;
     color: white;
+    padding: 20px 0;
 }  
 
 .projectoverview{
@@ -86,6 +87,14 @@ a:hover, a:focus, a:active{
 }
 
 .projectoverview a:hover, .projectoverview a:focus, .projectoverview a:active, .modal-footer a:hover, .modal-footer a:focus, .modal-footer a:active{
+  color: grey;
+}
+
+.modal a{
+  color:black;  
+}
+
+.modal a:hover, .modal a:focus, .modal a:active{
   color: grey;
 }
 
@@ -169,7 +178,7 @@ a:hover, a:focus, a:active{
 }
 
 .profile img{
-    max-height: 180px;
+    max-height: 160px;
     border-radius: 20px;
 } 
 

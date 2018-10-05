@@ -3,7 +3,7 @@
  	<div class="topfooter section">
     <div class="container">
       <div class="row">
-      <div class="col-md-5 mr-auto">
+      <div class="col-sm-6 mr-auto">
         <div class="contactleft">
       	   <h3>{{__('home.hi')}}</h3>
            <div class="row"> 
@@ -14,7 +14,7 @@
   </div>
         </div>
 		  </div>
-		  <div class="col-md-5 ml-auto">
+		  <div class="col-sm-6 ml-auto">
         <div class="contactright">
   			  <h3>Contact</h3>
           <div class="contactitem"> <i class="contactfeather" data-feather="search"></i><span class="contacttext">KVK 66996422</span></div>
