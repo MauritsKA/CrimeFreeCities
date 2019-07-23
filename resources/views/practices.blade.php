@@ -14,7 +14,7 @@
 </section>
 
 <section class="statistics section">
-   <div class="container">
+   <div class="container" style="text-align: left;">
     @foreach($practices as $practice)
  <div class="markdowndiv">  <?php echo parsedown( $practice->texts()->get()->where('type','summary')->where('lang',Session::get('locale'))->pluck('content')->first() ); ?> </div>
    @endforeach

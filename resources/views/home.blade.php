@@ -92,8 +92,7 @@
    <a href='statistics'><h3>{{ucfirst(__('nav.statistics'))}}</h3></a>
    <div class="row">
      <div class="col-md-5 mr-auto" > 
-      <p class=" text-justify">Crime is concentrated mainly in cities. In the Netherlands, for example, the chance of becoming a victim of a crime such as burglary or robbery in urbanised areas is 2-5 times higher than in rural areas (see ‘statistics’ for more information). Crime prevention is most urgent in urbanised areas. For this reason, the content of this website is focused  on crime prevention in cities with a population of 75.000 and more.
-      </p>
+      <p class=" text-justify">{{__('home.stats')}}</p>
     </div>
       <div class="col-md-6 "> 
        <canvas id="myChart" width="400" height="300"></canvas>
@@ -175,56 +174,130 @@ Chart.defaults.global.elements.line.ShowLine = false;
 
 var canvas = document.getElementById('myChart');
 
+
 var myLineChart = Chart.Line(canvas,{
   data: {
-    labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
+    labels: [1,2,3,4,5],
     datasets: [{ 
-        data: [86,114,106,106,107,111,133,221,783,2478],
-        label: "Africa",
+        data: [1.75,1,3.333333333,4],
+        label: "{{__('home.NE')}}",
         borderColor: "#3e95cd",
         fill: false,
         showLine: false
       }, { 
-        data: [282,350,411,502,635,809,947,1402,3700,5267],
-        label: "Asia",
+        data: [4, 5, 5, 4],     
+        label: "{{__('home.S')}}",
         borderColor: "#8e5ea2",
         fill: false,
         showLine: false
       }, { 
-        data: [168,170,178,190,203,276,408,547,675,734],
-        label: "Europe",
+        data: [2.666666667, 1, 1.666666667, 2, 4.75],
+        label: "{{__('home.W')}}",
         borderColor: "#3cba9f",
         fill: false,
         showLine: false
       }, { 
-        data: [40,20,10,16,24,38,74,167,508,784],
-        label: "Latin America",
-        borderColor: "#e8c3b9",
-        fill: false,
-        showLine: false
-      }, { 
-        data: [6,3,2,2,7,26,82,172,312,433],
-        label: "North America",
-        borderColor: "#c45850",
-        fill: false,
-        showLine: false
-      },
-      { 
-        data:  [120,130,160,192,220,250,310,430,920,2078],
-        label: "Mean",
+        data: [2.375, 1.8, 2.857142857, 3.666666667, 4.75],
+        label: "{{__('home.Nat')}}",
         borderColor: "#8fb72c",
         fill: false
       }
     ]
   },
   options: {
-    title: {
+      scales: {
+         xAxes: [{
+          display: true,
+          scaleLabel: {
+            display: true,
+            labelString: '{{__('home.xlabel')}}'
+          }
+        }],
+        yAxes: [{
+          display: true,
+          scaleLabel: {
+            display: true,
+            labelString: '{{__('home.ylabel')}}'
+          },
+          ticks: {
+            beginAtZero: true,
+            steps: 5,
+            stepValue: 1,
+            max: 5.01
+          }
+      }]
+      },
+      title: {
       display: true,
-      text: 'World population per region (in millions)'
+      text: '{{__('home.plotTitle')}}'
     }
   }
 });
 
+
+// var myLineChart = Chart.Scatter(canvas,{
+//       data: {
+//         labels: [['Emmen','Ede','Zwolle','Apeldoorn','Deventer','Leeuwarden','Enschede','Groningen','Nijmegen','Arnhem'],
+//                 ['Tilburg','Venlo','Breda','Den Bosch','Maastricht','Eindhoven'],
+//                 ['Haarlemmermeer','Zaanstad','Leiden','Zoetermeer','Amersfoort','Delft','Almere','Haarlem','Dordrecht','Alkmaar','Den Haag','Rotterdam','Utrecht','Amsterdam']],
+//         datasets: [{
+//             label: '{{__('home.NE')}}',
+//             data: [{x: 1, y: 1}, {x: 1, y: 1}, {x: 2, y: 1}, {x: 3, y: 2}, {x: 1, y: 2}, {x: 1, y: 3}, {x: 3, y: 3}, {x: 4, y: 4}, {x: 4, y: 4}, {x: 3, y: 5}],
+//             borderColor: "#3e95cd",
+//             }, {
+//             label: '{{__('home.S')}}',
+//             data: [{x: 4, y: 3}, {x: 1, y: 4}, {x: 4, y: 4}, {x: 3, y: 5}, {x: 2, y: 5}, {x: 4, y: 5}],
+//             borderColor: "#8e5ea2",
+//             }, {
+//             label: '{{__('home.W')}}',
+//             data: [{x: 143000, y: 1}, {x: 152678, y: 1}, {x: 122612, y: 1}, {x: 124300, y: 1}, {x: 154500, y: 2}, {x: 101500, y: 2}, {x: 198145, y: 2}, {x: 158123, y: 2}, {x: 118783, y: 3}, {x: 107300, y: 3}, {x: 520697, y: 4}, {x: 629148, y: 5}, {x: 338986, y: 5}, {x: 834713, y: 5}],
+//             borderColor: "#3cba9f",
+//             }]
+//     },
+//    options: {
+//     tooltips: {
+//      callbacks: {
+//         label: function(tooltipItem, data) {
+//            //var label = data.labels[tooltipItem.index][tooltipItem.datasetIndex];
+//            var label = data.labels[tooltipItem.datasetIndex][tooltipItem.index];
+//            return label +': (' + tooltipItem.xLabel + ', ' + tooltipItem.yLabel + ')';
+//         }
+//       }
+//     }, 
+//     scales: {
+//          xAxes: [{
+//           display: true,
+//           scaleLabel: {
+//             display: true,
+//             labelString: '{{__('home.xlabel')}}'
+//           }
+//         }],
+//         yAxes: [{
+//           display: true,
+//           scaleLabel: {
+//             display: true,
+//             labelString: '{{__('home.ylabel')}}'
+//           },
+//           ticks: {
+//             beginAtZero: true,
+//             steps: 5,
+//             stepValue: 1,
+//             max: 5.01
+//           }
+//       }]
+//       },
+//    title: {
+//       display: true,
+//       text: '{{__('home.plotTitle')}}'
+//     }
+//   }
+// });
+
+
+
+
+
 </script>
+
 
 @endsection
