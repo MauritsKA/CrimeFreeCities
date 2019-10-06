@@ -185,7 +185,7 @@ var myLineChart = Chart.Line(canvas,{
         fill: false,
         showLine: false
       }, { 
-        data: [3,2, 3.2, 3.2, 3.3],     
+        data: [3.2, 3.2, 3.2, 3.3],     
         label: "{{__('home.S')}}",
         borderColor: "#8e5ea2",
         fill: false,
