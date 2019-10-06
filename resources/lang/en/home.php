@@ -12,12 +12,12 @@ return [
     'publications' => 'Een intro voor de publicaties, met uitleg wat er in staat en hoe het verdeeld is, met misschien een kleine algemene uitleg over de soort publicaties die je doet.',
     'hi' => 'Say hi', 
     'stats' => 'The larger the city, the more crime. For the 30 largest Dutch cities (municipalities) and for 10 types of common crime, it was mapped how many offenses per 100 inhabitants were reported to the police in 2016. The graph shows that this figure is around 2.0 in smaller cities and around 4.0 in large cities. Do you want to know more about the relationship between the size of the city and the amount of crime? Then go to the ‘Statistics’ page',
-    'plotTitle' => 'Criminality level depending of the size of the city per region',
+    'plotTitle' => 'Criminality level per region and urbanisation class in 2016',
     'NE' => 'North/East',
     'S' => 'South',
     'W' => 'West',
     'Nat' => 'National',
-    'xlabel' => 'Population class',
-    'ylabel' => 'Criminality class',
+    'xlabel' => 'urbanisation class',
+    'ylabel' => 'Crimes per 100 inhabitants',
 ];
 

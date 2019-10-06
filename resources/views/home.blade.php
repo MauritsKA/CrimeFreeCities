@@ -179,25 +179,25 @@ var myLineChart = Chart.Line(canvas,{
   data: {
     labels: [1,2,3,4,5],
     datasets: [{ 
-        data: [1.75,1,3.333333333,4],
+        data: [1.95,1.95,2.54,2.84],
         label: "{{__('home.NE')}}",
         borderColor: "#3e95cd",
         fill: false,
         showLine: false
       }, { 
-        data: [4, 5, 5, 4],     
+        data: [3,2, 3,2, 3,2, 3,3],     
         label: "{{__('home.S')}}",
         borderColor: "#8e5ea2",
         fill: false,
         showLine: false
       }, { 
-        data: [2.666666667, 1, 1.666666667, 2, 4.75],
+        data: [2.09, 2.09, 2.17, 2.17, 3.87],
         label: "{{__('home.W')}}",
         borderColor: "#3cba9f",
         fill: false,
         showLine: false
       }, { 
-        data: [2.375, 1.8, 2.857142857, 3.666666667, 4.75],
+        data: [2.2, 2.2, 2.47, 2.99, 3.87],
         label: "{{__('home.Nat')}}",
         borderColor: "#8fb72c",
         fill: false

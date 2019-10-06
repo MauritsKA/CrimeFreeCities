@@ -12,12 +12,12 @@ return [
     'publications' => 'Een intro voor de publicaties, met uitleg wat er in staat en hoe het verdeeld is, met misschien een kleine algemene uitleg over de soort publicaties die je doet.',
     'hi' => 'Maak kennis',
     'stats' => 'Hoe groter de stad, des te meer criminaliteit. Voor de 30 grootste steden (gemeenten) is van 10 typen veel voorkomende criminaliteit in kaart gebracht hoeveel misdrijven per 100 inwoners er in 2016 bij de politie zijn aangegeven. De grafiek laat zien dat dit cijfer in kleinere steden rond 2,0 ligt, en in de grote steden rond 4,0. Wilt u meer weten over de samenhang tussen de grootte van de stad en de hoeveelheid criminaliteit? Gaat u dan naar de pagina ‘Statistiek’.',
-    'plotTitle' => 'Criminaliteitsniveau afhankelijk van de grootte van de stad per regio',
+    'plotTitle' => 'Criminaliteitsniveau per regio en urbanisatieklasse in 2016',
     'NE' => 'Noord/Oost',
     'S' => 'Zuid',
     'W' => 'West',
     'Nat' => 'Nationaal',
-    'xlabel' => 'Populatie klasse',
-    'ylabel' => 'Criminaliteits klasse',
+    'xlabel' => 'urbanisatieklasse',
+    'ylabel' => 'Misdrijven per 100 inwoners',
 ];
 
