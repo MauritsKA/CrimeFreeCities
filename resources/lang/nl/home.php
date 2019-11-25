@@ -19,5 +19,6 @@ return [
     'Nat' => 'Nationaal',
     'xlabel' => 'urbanisatieklasse',
     'ylabel' => 'Misdrijven per 100 inwoners',
+    'practicesBody' => 'Geen veilige stad zonder veilige ruimtes. Ik help gemeenten, woningcorporaties, projectontwikkelaars en openbaar vervoerbedrijven met advies. U kunt mij een plaats te geven in het team waarin de plannen en ontwerpen worden besproken, u kunt uw plan aan mij toesturen en door mij laten toetsen, of u kunt mij voorafgaand aan het ontwerpproces een programma van eisen te laten opstellen met richtlijnen voor de ontwerpers. De keuze is aan u. Maatwerk is het uitgangspunt.',
 ];
 

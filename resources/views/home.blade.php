@@ -38,7 +38,7 @@
 <section class="projects section">
    <div class="container">
    <a href='projects'><h3>Project {{__('home.projecttitle')}}</h3></a>
-    <p>{{__('home.projectcontent')}} (<a href='projects'>read more...</a>)</p>
+    <p class=" text-justify">{{__('home.projectcontent')}} (<a href='projects'>read more...</a>)</p>
   </div>
 </section>
 
@@ -71,21 +71,10 @@
 <section class="practices section">
    <div class="container">
    <a href='practices'><h3>{{ucfirst(__('nav.practices'))}}</h3></a>
-   <div class="row">
-     <div class="col-md-6" > 
-     <h5>Creating confidence</h5> 
-      <p class=" text-justify">The central theme in all approaches to crime prevention is, in my vison, confidence. People in neighbourhoods should be able to trust each other as well as their city government and their local police force. Government and police should be rooted steadily into the neighbourhoods. 
-      In the city centre and in industrial zones, local entrepreneurs should take confidence  in their government and prevent crime together. Tailor made public private partnerships should emerge, in which all stakeholders invest in crime prevention, according to their possibilities. 
-      </p>
-    </div>
-      <div class="col-md-6 ">  
-        <h5>Crime Prevention Through Environmental Design</h5> 
-        <p class="text-justify">A useful supportive approach to crime prevention should be mentioned here as well: Crime Prevention Through Environmental Design (CPTED).  CPTED means: investing in the quality of the urban environment, improving the possibilities for natural surveillance at the same time. Crime free spaces contribute to crime free cities. Different stakeholders, such as housing associations, project developers and transport companies can work together with the city government in the CPTED approach. Seeing their environment improve, the confidence of people in their city government increases. CPTED encourages  people to keep their own neighbourhood safe.  
-        </p>
-    </div>
-   </div>
+      <p class=" text-justify">{{__('home.practicesBody')}}</p>
   </div>
 </section>
+
 
 <section class="statistics section">
    <div class="container">

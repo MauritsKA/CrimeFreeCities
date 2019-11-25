@@ -19,5 +19,6 @@ return [
     'Nat' => 'National',
     'xlabel' => 'urbanisation class',
     'ylabel' => 'Crimes per 100 inhabitants',
+    'practicesBody' => 'No secure city without secure spaces. I help municipalities, housing associations, project developers and public transport companies by giving them advice. You can give me a position in the team where the plans and designs are discussed, you can send me your plan and have it reviewed by me, or you can let me prepare a program of requirements with guidelines for the designers prior to the design process. The choice is up to you. You will receive a tailor made product',
 ];
 
